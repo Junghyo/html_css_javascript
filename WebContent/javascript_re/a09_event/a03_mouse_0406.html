@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 여러가지 이벤트들
+ onclick : 마우스를 클릭했을 때
+ 
+ onmouseover : 마우스 커서가 해당 위치 위에 올려졌을 때
+ 
+ onmouseout : 마우스 커서가 해당 위치 위에 올려졌다가 벗어났을 때
+ 
+ onkeyup : 키보드의 특정 키를 클릭했다가 손가락에서 벗어났을 때
+*/
+
+/*
+ 해당 색상위에 마우스가 올려졌을 때 메인 색종이 색상이 변경처리
+ 화면 구성
+ 각각의 객체에 마우스 이벤트 할당
+ var tds = documentquerySelectorAll("#color01");
+ td01.mouseover=function(){
+	 document.querySelector("#target01");
+ }
+*/
+	$(document).ready(function(){
+		var ch01 = document.querySelectorAll("th");
+		// 함수1. 해당 객체를 마우스 오버했을 경우
+		for(var idx=0; idx<ch01.length; idx++){
+			ch01[idx].onmouseover=function(){
+			// 지정된 대상객체의 색상을 변경처리
+				document.querySelector("#target01").style.background=this.innerHTML;
+			};
+			ch01[idx].onmouseout=function(){
+				document.querySelector("#target01").style.background="";
+			};
+		}
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<table style="width:600; height:50; border:1px solid blue; margin:auto;">
+		<tr>
+			<th>RED</th>
+			<th>ORANGE</th>
+			<th>YELLOW</th>
+			<th>GREEN</th>
+			<th>BLUE</th>
+			<th>NAVY</th>
+			<th>PURPLE</th>
+		</tr>
+	</table>
+	<div id="target01" style="width:300pt; height:400pt; background:pink; margin:auto; margin-top:30px;">
+	</div>
+</body>
+</html>

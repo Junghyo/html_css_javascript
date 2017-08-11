@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제.
+ 함수객체 : CoffeeShop
+ 입력값  : 주문자, 주문커피 종류, 가격, 갯수
+ 호출처리 : coffeeOrder01, coffeeOrder02
+ 	주문한 커피는 @@@, 가격 @@@, 갯수 @@@, 총 @@@입니다.
+ */
+ 	function CoffeeShop(name, kind, price, count){
+		this.name=name;
+		this.kind=kind;
+		this.price=price;
+		this.count=count;
+		this.total= parseInt( price*count );
+ };
+ 	var coffeeOrder01 = new CoffeeShop("김빠빠", "쌍화차", 2000, 12);
+ 	var coffeeOrder02 = new CoffeeShop("졸리", "붕어즙", 3500, 17);
+	var show01="주문자 이름 : "+coffeeOrder01.name+"\n";
+	show01+="주문한 커피는 "+coffeeOrder01.kind+"\n";
+	show01+="가격은 "+coffeeOrder01.price+"원\n";
+	show01+="갯수는 "+coffeeOrder01.count+"개\n";
+	show01+="총 금액은 "+coffeeOrder01.total+"원입니다.";
+	console.log(show01);
+	var show02="주문자 이름 : "+coffeeOrder02.name+"\n";
+	show02+="주문한 커피는 "+coffeeOrder02.kind+"\n";
+	show02+="가격은 "+coffeeOrder02.price+"원\n";
+	show02+="갯수는 "+coffeeOrder02.count+"개\n";
+	show02+="총 금액은 "+coffeeOrder02.total+"원입니다.";
+	console.log(show02);	
+	
+// 배열 사용
+	var coffeeOrder=[];
+	coffeeOrder[0] = new CoffeeShop("김빠빠", "쌍화차", 2000, 12);
+	coffeeOrder[1] = new CoffeeShop("졸리", "붕어즙", 3500, 17);
+	alert(coffeeOrder[0].name);
+	for(idx=0; idx<2; idx++){
+		var show="주문자는 "+coffeeOrder[idx].name;
+		show+="이고 주문한 커피종류는 "+coffeeOrder[idx].kind+"입니다.";
+		show+=" 개당 가격은 "+coffeeOrder[idx].price+"원이며 주문한 갯수는 "+coffeeOrder[idx].count+"개입니다.";
+		show+=" 총 금액은 "+coffeeOrder[idx].total+"원입니다.";
+		console.log(show);
+	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

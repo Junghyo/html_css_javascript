@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// $.ajax({속성1:속성값, 속성2:속성값});
+		// dataType : 어떤 형태의 data인지? ex) xml, text, json
+		// url : 자원을 넘겨주는 웹서버
+		// success : function(객체){}	-- 접속이 정상적으로 되었을 때 가져오는 객체
+		
+		$.ajax({
+		  dataType: "json",
+		  url: "http://json-schema.org/draft-04/schema#",
+		  success: function(obj){
+			  $("td").eq(0).html(obj.id);
+			  $("td").eq(1).html(obj.$schema);
+			  $("td").eq(2).html(obj.description);
+			  $("td").eq(3).html(obj.type);			  
+		 	 }
+		});
+
+		/*
+		 # 문서객체 클래스
+		 클래스 속성 추가
+		 $(객체).addClass(): 문서객체의 클래스 속성 추가
+		 ex) item{background:'green'};
+		 	 body 부분 - <h1>h1 출력부분 </h1>
+		 	 $(document).ready(funtion(){
+		 		 $("h1").addClass("item");     -- h1 tag에 class 속성 추가.
+		 		 $("객체").removeClass(정의된 클래스명); -- 문서 객체의 클래스 속성 제거 처리.
+		 	 }
+		*/		
+		$("h1").eq(1).addClass("item");
+		$('.item').css("background","tomato");
+		
+	});	
+		
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<table style="margin:auto;" border=1>
+		<tr><th>id</th><th>$schema</th><th>description</th><th>type</th></tr>
+		<tr><td></td><td></td><td></td><td></td></tr>
+	</table>
+	<h1>class속성을 부여안함</h1>	
+	<h1>class속성을 부여할꺼다(class명 : item)</h1>	
+	<h1>class속성을 부여안함</h1>	
+</body>
+</html>

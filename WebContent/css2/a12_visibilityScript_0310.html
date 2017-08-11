@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chgVisible(obj){
+		//alert("호출됨!!"+obj.innerHTML);      						// obj.innerHTML : 현재 호출한 객체의 label 출력
+		var tabObj = document.getElementsByTagName("table")[0]; 	// 테이블 객체 지정. table객체중에 첫번째 table
+		tabObj.style.visibility="visible";							// 테이블 객체를 보이게 처리
+		/*해당 label이 보이게 하세요!==>보이지 않게 하세요(label)
+									 보이게 처리	
+		  해당 label이 보이게 하세요!==>보이게 하세요(label)
+									 보이지 않게 처리	
+		*/
+		if(obj.innerHTML=="보이게 하세요!!"){
+			tabObj.style.visibility="visible";
+			obj.innerHTML="보이지 않게 하세요!!";
+		}else{
+			tabObj.style.visibility="hidden";
+			obj.innerHTML="보이게 하세요!!";
+		}
+	}
+</script>
+<style type="text/css">
+	table{background-image:url('/clientPrj/img/img02.jpg'); visibility:hidden;}
+</style>
+
+</head>
+<body>
+	<h1 onclick="javascript:chgVisible(this);">보이게 하세요!!</h1>
+	<table height="300" width="300">
+	</table>
+
+<!-- 
+ 과제(homework)
+ keyword 등록 [     ]
+ 등록할 수 있는 keyword[보이기]    -- 초기에는 등록가능 keywords 보이지 않다가 보이기 버튼을 클릭하는 순간 보이기 처리
+ 등록가능 keywords!!                버튼에 있는 label 보이지 않기 <==> 보이기
+ java
+ jsp
+ c#
+ 파이썬
+
+-->	
+</body>
+</html>

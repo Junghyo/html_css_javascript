@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+
+<style type="text/css">
+	canvas{border: 1px solid  #000000;};
+</style>
+
+</head>
+<body>
+	<canvas id="yodaCanvas" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+
+	var canvas = document.getElementById("yodaCanvas");
+	var ctx = canvas.getContext("2d");
+	// canvas. getContext ( contextType, contextAttributes );
+	// 2d로 세팅하겠다.
+	ctx.fillStyle="red";
+	// 빨강색으로 칠하겠다(색깔 안줄 경우 default검은색)
+	ctx.fillRect(0, 0, 150, 75);
+	// x, y, width, height
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+생성자를 통한 초기값 설정
+var student1 = new Student();
+	- 객체마다 다른 속성의 값을 초기에 설정할 필요가 있다.
+	- 객체는 구조(속성, 메서드)를 만들어 놓고 데이터를 다르게 처리해야지 의미가 있다.
+	- 외부에 이는 데이터를 초기값으로 입력이 가능한 구조로 만들어야 한다. Student() <--
+		-> 생성자의 입력값을 정의해 놓고 정의한 입력값이 전역변수에 할당되면 데이터가 변경된 객체가 만들어 질 수 있다.
+
+1) 변경하는 속성값 정의
+형식 :function 생성자명(입력값1, 입력값2, ....) 
+	 function Student(name, kor, eng, math){
+	 	this.name=name;
+	 		- this가 붙어있는 것은 전역변수의 name이고 this가 붙지 않은 것은 외부에서 받은 지역변수 name을 말한다.
+}
+
+2) 객체 호출과 활용.	입력값1에 데이터1 할당
+	- var 참조변수 = new 생성자명(데이터1, 데이터2, ...);
+ex) var student01 = new Student("호날두", 70, 80, 90);		name에 호날두가 할당 
+	 name="호날두";
+	 var student02 = new Student("메레기", 50, 60, 70);
+	 	- this.name=name;으로 인해서 전역변수에 "호날두"로 할당
+	 	- student01.name; student02.name; <-- 여러 객체들을 활용할 수 있다.
+
+*/
+
+// 1. 함수 객체 구조에 입력값 4개가 데이터로 들어오게
+	function Student(name, kor, eng, math){
+	 		//각 입력된 데이터는 전역변수(this)에 할당
+	 		this.name=name;
+	 		this.kor=kor;
+	 		this.eng=eng;
+	 		this.math=math;
+	 		// 내부에 있는 변수를 통해서 새로운 변수를 처리
+	 		this.avg = parseInt( (kor+eng+math)/3 );
+};
+	// 각각 함수객첼르 통해서 구조는 동일, 데이터는 다양하게
+	var stu01 = new Student("빡대가리", 10, 17, 15);
+	var stu02 = new Student("아인슈타인", 100, 93, 97);
+	// 해당 정보를 기본 출력창으로 처리
+	var show1="학생1의 이름 : "+stu01.name+"\n";
+	show1+="학생1의 국어점수 : "+stu01.kor+"\n";
+	show1+="학생1의 영어점수 : "+stu01.eng+"\n";
+	show1+="학생1의 수학점수 : "+stu01.math+"\n";
+	show1+="학생1의 평균 : "+stu01.avg;
+	console.log(show1);
+	console.log("학생2의 이름 : "+stu02.name+"\n"+
+			"학생2의 국어점수 : "+stu02.kor+"\n"+
+			"학생2의 영어점수 : "+stu02.eng+"\n"+
+			"학생2의 수학점수 : "+stu02.math+"\n"+
+			"학생2의 평균 : "+stu02.avg);
+
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

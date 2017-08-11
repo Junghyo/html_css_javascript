@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 함수 정의 2번째
+함수의 변수를 지정
+변수 : var 함수명;
+함수를 할당 : 함수명 = function(데이터1){처리할 프로세스};
+함수호출 : 함수명(데이터1값);
+var show01 = function(showStr){			// 함수변수 = 함수내용 할당;
+	 alert("입력받은 출력내용"+showStr);			// show01("안녕하세요!!!");
+};		
+*/
+// 1) 함수변수 선언과 할당.
+	var show01 = function(showStr){
+		alert("입력받은 내용을 alert으로 출력 : "+showStr);
+		// return이 있는 경우 : 값을 통해서 결과값을 변수로 처리해야 할 경우.
+		// return이 없는 경우 : 프로세스만 있어서 굳이 결과값을 변수로 할당할 필요가 없는 경우
+};
+// 2) 정의된 함수변수 호출. 함수명(function에 정의된 입력값=showStr);
+	show01("Good day to die");	// Good day to die가 showStr에 할당이 되고 그 내용이 출력이 된다.
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

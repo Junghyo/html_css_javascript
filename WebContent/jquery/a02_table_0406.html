@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("table").css("margin","auto");
+		$("table").css("border-collapse","collapse");
+		$("table").css("width","500px");
+		$("table").css("height","300px");
+		$("th").css("border","1px solid white");
+		$("table").css("border","3px solid black");
+		$("caption").css("border","3px solid black");
+		$("caption").css("width","150px");
+		$("caption").css("margin","auto");
+		$("caption").css("height","50px");
+		$("caption").css("line-height","50px");
+		$("caption").css({"font-size": "30px", "text-weight": "900"});
+		$("caption").css({"margin-bottom": "30px", "background": "#a3a3c2"});
+		$("tr:even").css("background","#c2f0f0");
+		$("tr:odd").css("background","#ccffe6");
+		$("#title").css("background","#009999");
+		$("#title").css("color","white");
+		$(".right").css("text-align","right");
+		$(".left").css("text-align","left");
+
+	});
+	
+
+</script>
+<style type="text/css">
+</style>
+
+</head>
+<body>
+	<table>
+		<caption>행복마트</caption>
+		<tr id="title">
+			<th>물건명</th>
+			<th>가격</th>
+			<th>현재고량</th>
+			<th>비고</th>
+		</tr>
+		<tr>
+			<th>사과</th>
+			<th class="right">3000</th>
+			<th class="right">30</th>
+			<th class="left">입고중</th>
+		</tr>
+		<tr>
+			<th>바나나</th>
+			<th class="right">4000</th>
+			<th class="right">300</th>
+			<th class="left">재구충분</th>
+		</tr>
+		<tr>
+			<th>딸기</th>
+			<th class="right">12000</th>
+			<th class="right">50</th>
+			<th></th>
+		</tr>						
+	</table>
+</body>
+</html>

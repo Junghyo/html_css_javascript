@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	});
+	function remove(){
+		$("h1").removeClass("select");
+		// h1의 class 속성 중 select값을 삭제
+	}
+
+</script>
+<style type="text/css">
+	.item{background:#ffb3b3;}
+	.select{color:royalblue;}
+</style>
+
+</head>
+<body>
+	<h1 class="item">class: item인 h1</h1>
+	<h1 class="item">class: item인 h1</h1>
+	<h1 class="item select">class: item select인 h1</h1>
+	<h1 class="item">class: item인 h1</h1>
+	<h1 class="item">class: item인 h1</h1>
+	<h1 class="item">class: item인 h1</h1>
+	<button onclick="javascript:remove()">클래스 속성 제거</button>
+</body>
+</html>
+

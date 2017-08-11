@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/*
+ 내부자원 접근하기
+ window.open("내부자원 .html, .jsp, ...")
+ - 내부에 특정자원을 로딩할 수 있다.
+ ex) window.open("a03_subWin_0405.html","","");
+
+ 부모창과 자식창(window 팝업)간의 데이터 전송
+ - 부모창에서 window.open("sub.html") : 자식창 sub.html이 열린다.
+ - 자식창에서 부모창은 opener라는 개념으로 쓰인다.
+ - 자식창에서 부모창의 입력 데이터를 호출할 때 opener.document.getElementById("설정된 id값").value;
+ - 로딩과 변경이 가능.
+ 
+ # opener 활용 예제
+ parent.html(부모창)
+ - 이름: [   ] --> <input type="text" id="ename01">
+ - 부서: [   ] --> <input type="text" id="dname01">
+ - 입력을 한 후에 클릭 버튼으로 자식창(팝업) 로딩
+ 
+ child.html(자식창)
+ - child.html을 열어준 parent.html에서 입력한 데이터값 이름은 다음과 같이 javascript에서 로딩 할 수 있다.
+ - opener.document.getElementById("ename01").value;
+ - opener.document.getElementById("dname01").value;
+*/
+	$(document).ready(function(){
+		var ename01Value=opener.document.getElementById("ename01").value;
+		// 전체 body까지 인식한 후 처리. 이 화면을 호출한 부모창의 id="ename01" 객체의 데이터값을 가져오기
+		document.getElementById("showEname").innerHTML="사원 이름은 : "+ename01Value;
+		alert("넘겨온 데이터 : "+ename01Value);
+	});
+
+	function sendData(dname){
+		alert(dname+"부서를 main페이지에 전달!!");
+		opener.document.getElementById("dname01").value=dname;
+		this.close();
+		// 현재 창을 닫아주는 처리.
+	}
+</script>
+<style type="text/css">
+	h1{text-align:center;}
+</style>
+</head>
+<body>
+	<h1>인사정보 SYSTEM</h1>
+	<h2 id="showEname"></h2>
+	<h3 align="center" onclick="javascript:sendData('인사')">인사</h3>
+	<h3 align="center" onclick="javascript:sendData('인사')">총무</h3>
+	<h3 align="center" onclick="javascript:sendData('인사')">전략기획</h3>
+	<h3 align="center" onclick="javascript:sendData('인사')">IT사업부</h3>
+</body>
+</html>

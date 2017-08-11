@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제.
+ 초기화면에 시험시작!!!! - 화면출력
+ 10초 후!!
+ 시험 종료!!! 화면에 출력
+ setTimeout
+ document.getElementsByTagName("h1").innerHTML=
+ */
+	setTimeout(function(){
+		document.getElementsByTagName("h1")[0].innerHTML="5초 지났습니다.";
+		document.getElementsByTagName("h1")[0].style.color="blue";
+	},5000);
+	setTimeout(function(){
+		var showObj = document.getElementsByTagName("h1")[0];
+		showObj.innerHTML="10초가 다 됐습니다. 시험종료!";
+		showObj.style.color="green";
+	},10000);
+</script>
+<style type="text/css">
+	h1{text-align:center;}
+</style>
+
+</head>
+<body>
+	<h1>시험시작</h1>
+</body>
+</html>

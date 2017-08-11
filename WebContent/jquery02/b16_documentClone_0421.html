@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+# 문서객체 복제
+1) 문서객체는 append를 활용하면 기존에 있는 위치에서 이동하는 기능을 수행한다.
+이때 기존문서객체도 그대로 있고 해당객체의 내용을 화면에 표시하고자 하면
+*/
+	$(document).ready(function(){
+		$("#go").on("click", function(){
+//			객체를 이동시키는 처리		
+			$("div").append($("#go"));
+		});
+	});
+
+
+
+	var i =0;
+	var color=["red","orange", "yellow", "green", "blue", "navy", "purple"];	
+	function goClone(obj){
+//		$(객체).clone() : 객체복사
+		setInterval(function(){
+				$(obj).css("background",color[i%7] );
+				i++;
+		},50);
+		$("div").append($(obj).clone());
+	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1 id="go">h1 tag.Append 적용</h1>
+	<h1 onclick="javascript:goClone(this)">h1 tag. Clone</h1>
+	<div style="width:300px; height:300px; background:pink;"></div>
+</body>
+</html>

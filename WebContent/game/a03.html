@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+	canvas{border:1px solid black;}
+</style>
+
+</head>
+<body>
+	<canvas id="c01" width="300" height="300"></canvas>
+	<canvas id="c02" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+	var canvas01 = document.getElementById("c01");
+	var ctx01 = canvas01.getContext("2d");
+	ctx01.font="30px Arial";
+	// 글자 정의. 크기, 글자모양. problem: 크기만 하면 글자크기가 조정이 안됨
+	ctx01.fillText("Welcome to Acorm world",20,50);
+	// 글자를 채우겠다. "text", x, y
+	var canvas02 = document.getElementById("c02");
+	var ctx02 = canvas02.getContext("2d");
+	ctx02.font="25px Arial";
+	ctx02.strokeText("Welcome to Acorm world",20,50);
+	// 글자를 꽉 채우지않고 겉만 표현
+</script>
+</html>

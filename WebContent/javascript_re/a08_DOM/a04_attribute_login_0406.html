@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+예제.
+로그인 화면에서 name값으로 처리하는 내용
+- 화면 구성
+
+- 객체 지정 : document.getElementsByName("name값");
+- id, pass의 name값을 지정하고, 해당 값에 대한 유효성 여부 체크하는 내용 처리..
+*/
+	$(document).ready(function(){
+	 	var id=document.createElement("input");
+	 	var password=document.createElement("input");
+	 	var login=document.createElement("button");
+	 	var butnText=document.createTextNode("로그인");
+	 	id.setAttribute("type","text");
+	 	id.setAttribute("name","inputId");
+	 	id.setAttribute("placeholder","아이디를 입력하세요.");
+	 	password.setAttribute("type","password");
+	 	password.setAttribute("name","inputPass");
+	 	password.setAttribute("placeholder","비밀번호를 입력하세요.");
+	 	login.setAttribute("onclick","javascript:login01()")
+	 	document.body.appendChild(id);
+	 	document.body.appendChild(password);
+	 	login.appendChild(butnText);
+	 	document.body.appendChild(login);
+	});
+	function login01(){
+		var idVal=document.getElementsByName("inputId")[0].value;
+		var passVal=document.getElementsByName("inputPass")[0].value;
+		if(idVal=="future" && passVal=="7777"){
+			alert("로그인 성공! "+idVal+"님 환영합니다.");
+		}else{
+			alert("로그인 실패! ID와 비밀번호를 확인하세요");
+		}
+	}
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

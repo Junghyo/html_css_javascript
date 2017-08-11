@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+# 이벤트 연결
+1) jquery 이벤트 연결 기본
+- $(객체).on("이벤트이름", 이벤트로 처리할 함수);
+- $(객체).on(객체);
+- $(객체).on({이벤트1:함수, 이벤트2:함수, 이벤트3:함수});
+ex)
+<h1>h1 tag</h1>
+$("h1").on("click", function(){});
+*/
+	$(document).ready(function(){
+		$("h1").on("click",function(){
+			$("h1").css("background", "tomato");
+			$(this).append("★");
+//			$(this) : 여러개의 객체 중, 해당 이벤트를 처리한 객체만 변경처리.
+		})
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>이벤트 연결하는 h1 tag</h1>
+	<h1>이벤트 연결하는 h1 tag</h1>
+	<h1>이벤트 연결하는 h1 tag</h1>
+	<h1>이벤트 연결하는 h1 tag</h1>
+	<h1>이벤트 연결하는 h1 tag</h1>
+</body>
+</html>

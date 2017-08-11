@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function date(num){
+		var month=document.getElementById("april").innerHTML;
+		opener.document.getElementById("display").value="2017년-"+month+"-"+num+"일";
+		this.close();
+	}
+</script>
+<style type="text/css">
+	table{border:1px solid black; border-collapse:collapse; margin:auto;}
+	tr, th{border:1px solid black; width:50px; height:50px;}
+</style>
+
+</head>
+<body>
+	<table>
+		<tr>
+			<th colspan=7 id="april">04월</th>
+		</tr>
+		<tr>
+			<th>일</th>
+			<th>월</th>
+			<th>화</th>
+			<th>수</th>
+			<th>목</th>
+			<th>금</th>
+			<th>토</th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th onclick="javascript:date('01')">1</th>
+		</tr>
+		<tr>
+			<th onclick="javascript:date('02')">2</th>
+			<th onclick="javascript:date('03')">3</th>
+			<th onclick="javascript:date('04')">4</th>
+			<th onclick="javascript:date('05')">5</th>
+			<th onclick="javascript:date('06')">6</th>
+			<th onclick="javascript:date('07')">7</th>
+			<th onclick="javascript:date('08')">8</th>
+		</tr>
+		<tr>
+			<th onclick="javascript:date('09')">9</th>
+			<th onclick="javascript:date('10')">10</th>
+			<th onclick="javascript:date('11')">11</th>
+			<th onclick="javascript:date('12')">12</th>
+			<th onclick="javascript:date('13')">13</th>
+			<th onclick="javascript:date('14')">14</th>
+			<th onclick="javascript:date('15')">15</th>
+		</tr>
+		<tr>
+			<th onclick="javascript:date('16')">16</th>
+			<th onclick="javascript:date('17')">17</th>
+			<th onclick="javascript:date('18')">18</th>
+			<th onclick="javascript:date('19')">19</th>
+			<th onclick="javascript:date('20')">20</th>
+			<th onclick="javascript:date('21')">21</th>
+			<th onclick="javascript:date('22')">22</th>
+		</tr>
+		<tr>
+			<th onclick="javascript:date('23')">23</th>
+			<th onclick="javascript:date('24')">24</th>
+			<th onclick="javascript:date('25')">25</th>
+			<th onclick="javascript:date('26')">26</th>
+			<th onclick="javascript:date('27')">27</th>
+			<th onclick="javascript:date('28')">28</th>
+			<th onclick="javascript:date('29')">29</th>
+		</tr>
+		<tr>
+			<th onclick="javascript:date('30')">30</th>
+			<th></th><th></th><th></th><th></th><th></th><th></th></tr>
+	</table>
+</body>
+</html>

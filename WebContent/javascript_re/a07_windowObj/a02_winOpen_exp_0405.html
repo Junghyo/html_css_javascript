@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제.
+좋아하는 사이트 연결해서 로딩하기
+- 영화(크기 조절 400, 400)
+- 음악(크기조절불가 300, 200)
+- 게임(600, 400, location=yes)
+내부 사이트 화면 연결하기
+- 인사정보 리스트 화면 클릭시 사원 리스트 출력 홍길동, 총무, 김길동 인사
+- 캘린더 클릭시 임의의 월 list 처리 @@@월 캘린더
+*/	
+	//window.open("url/file명","이름","옵션(옵션1=옵션1값,)")
+	function openWin(width,height,idx,opt){
+		// idx로 선택된 site가 open될 수 있게..
+		// list[0], list[1]...
+		var list=["http://movie.naver.com/",
+		      	  "http://www.ollehmusic.com/",
+		          "http://game.daum.net/"];
+		window.open(list[idx],"win01","width="+width+",height="+height+","+opt);	
+}
+
+	function openWin2(sel){
+		// 사용자 정의로 화면이 나타나는 창 열기(script)
+		var winname = window.open("","","width=300, height=200");
+		// 윈도이름.document.... --화면을 script로 나타낸다.
+		if(sel=="인사"){
+			winname.document.write("<h1 align='center'>인사정보</h1>");
+			}else{
+				winname.document.write("<h1 align='center'>캘린더정보</h1>");		
+			}	
+}
+
+	function openWin3(sel){
+		var resource="";
+		if(sel=="인사") resource="a03_subWin_0405.html";
+		if(sel=="달력") resource="a04_subWin_0405.html";
+		var winname = window.open(resource,"","width=400, height=200");
+}
+	
+</script>
+<style type="text/css">
+	input{align:center;}
+</style>
+
+</head>
+<body>
+	<h1 align="center">좋아하는 사이트 연결</h1>
+	<h2 align="center" onclick="javascript:openWin(400,400,0,'')">영화</h2>
+	<h2 align="center" onclick="javascript:openWin(300,200,1,'')">음악</h2>
+	<h2 align="center" onclick="javascript:openWin(600,400,2,'menubar=yes')">게임</h2>
+	<h1 align="center" onclick="javascript:openWin2('인사')" >인사정보 list</h1>
+	<h1 align="center" onclick="javascript:openWin2('캘린더')" >캘린더</h1>
+	<h1 onclick="javascript:openWin3('인사')">인사정보 LIST(자원)</h1>
+	<h1 onclick="javascript:openWin3('달력')">달력</h1>
+	이름: <input type="text" id="ename01"><br>
+	부서: <input type="text" id="dname01">
+</body>
+</html>

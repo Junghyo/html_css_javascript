@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+/*
+ 배경이미지 호출 처리
+ background-image : url('img명')
+ 
+ 특정 tag의 배경이미지를 설정 처리
+ 	ex) 전체 화면(body)의 배경이미지를 img01.png로 설정
+ 			body{background-image:url('img01.png')}
+ 
+*/ 
+	h1{background-image:url('img01.png')}
+	table{background-image:url('img02.gif')}
+	
+/*
+ 상대 및 절대 파일에 대한 접근 방식
+ 
+ 1. 기본 : 현재 같은 폴더에 파일(이미지)가 존재할 경우 이미지명을 쓰면 그대로 활용할 수 있다.
+*/
+	h1{background-image:url('img01.png')}
+	table{background-image:url('img02.gif')} 
+	
+/* 2. 상위경로 설정 : ../상위경로/폴더명 지정 */
+ 	#a{background-image:url('../img06.jpg')} 				
+	#b{background-image:url('innerImg/img03.png')}
+ 
+/* 
+ 3. 현재경로에서 특정한 폴더에 있는 이미지를 로딩..
+ 		../특정폴더/해당이미지 : 상위경로에서 상위경로에 포함된 특정폴더 접근
+ 		ex) 현재 html화면에서 상위경로로 이동한 후, 이 경로에 포함된 폴더 중에 img폴더의 img01.jpg를 배경화면으로 처리	
+*/
+	#c{background-image:url('../img/img01.jpg')}
+
+/*
+ 4. local file에 있는 절대경로로 접근하는 방법	 		
+ 	'C:\Users\Public\Pictures\Sample Pictures/img07.jpg'
+ */
+ 	#d{background-image:url('http://localhost:8080/clientPrj/img/img04.jpg')}	
+ 
+ /*
+ 5. Web sever에 있는 default 경로를 확인하는 방법	
+ 
+ 6. Web sever의 default경로를 이용한 img로딩 방법
+ 	네트웍상 다른 서버에 있는 이미지들로 활용가능하다		
+ 	url("원격서버주소/프로젝트명/경로명/img나 자원")
+*/
+/* local 현재 자기 sever에서 어디까지 생략이 가능한가?
+/프로젝트명/webcontent하위에 경로설정
+*/ 
+	#d{background-image:url('http://localhost:8080/clientPrj/img/img04.jpg')}
+ 	#e{background-image:url('/clientPrj/img/img05.jpg')}
+ 	#f{background-image:url('C:\Users\Public\Pictures\Sample Pictures/img07.jpg')}
+</style>
+
+</head>
+<body>
+	<h1>tag별 배경이미지 설정</h1>
+	<table width="300" height="300"></table>
+	<table id="a" width="500" height="500"></table>
+	<table id="b" width="500" height="500"></table>
+	<table id="c" width="500" height="500"></table>
+	<table id="d" width="500" height="500"></table>
+	<table id="e" width="500" height="500"></table>
+	<table id="f" width="500" height="500"></table>
+	
+</body>
+</html>

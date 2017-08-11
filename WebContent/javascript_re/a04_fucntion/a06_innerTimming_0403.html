@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 시간관련 내장 함수
+ 1) setTimeout(함수, 1/1000초);
+ 	- 지정된 함수를 시간 이후(1/1000)초에 처리
+ ex) 3초 후에 함수를 실행하기
+ setTimeout( function(){
+	 alert("3초 지남!!")
+ }, 3000);
+ 
+ 2) setInterval(함수, 1/1000초);
+ 	- 지정된 함수를 시간(1/1000)초마다 반복처리
+ ex) 1초부터 초당 카운트 업 하는 예제. 1초, 2초, 3초....
+ 	- 전역변수 선언 : var cnt = 1;
+ 	setInterval(function(){
+ 		documnet.getElementsByTagName("h1")[1].innerHTML=cnt+"초";
+ 		cnt++;
+ 	},1000);	1초마다 반복.
+ 
+ 3) clearInterval(박복함수 변수);
+ 	- 반복정의 된 함수를 중지시켜줌.
+ ex) var inter01=setInterval();	
+ 	 clearInterval(inter01);
+*/
+
+// 1) setTimeout(함수, 시간); 시간 이후에 처리할 내용
+	setTimeout(function(){
+		alert("3초가 지났습니다.");
+	},3000);
+	
+	function call(){
+		alert("2초가 지났습니다.");
+	};
+	setTimeout(call,2000);	// 정의된 함수를 호출 처리
+	
+	setTimeout(function(){
+		document.getElementsByTagName("h1")[0].innerHTML="로딩 5초 후 배경색 토마토";
+		document.getElementsByTagName("h1")[0].style.background="tomato";
+	},5000);
+	
+	setTimeout(function(){
+		document.write("70초가 지났습니다.");
+	},70000);
+
+// 2) setInterval
+	var cnt=0;
+	setInterval(function(){
+ 		document.getElementsByTagName("h1")[1].innerHTML=cnt+"초";
+ 		cnt++;
+ 	},1000);
+	
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1></h1>
+	<h1></h1>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+/*
+ font에 관련된 속성
+ 1. size : 글자 크기 설정
+ 	1) px단위 설정(절대크기)
+ 	2) em, %단위 설정(상대크기)
+ 	3) 기타 large, small 속성
+ 		ex) cls01 클래스를 가지고 있는 tag는 글자크기를 32px로 설정
+*/
+	.cls01{font-size:32px;}
+	.cls02{font-size:2em;}      /*원래 글자크기보다 2배로 설정 */
+	.cls03{font-size:250%;}     /*원래 글자크기의 250%로 설정 */
+	.cls04{font-size:large;}    /*원래 글자크기를 좀 더 크게 */
+	.cls05{font-size:small;}    /*원래 글자크기를 좀 더 작게 */
+	
+/*
+ 2. family : 사용자 컴퓨터에 설치된 font형태를 사용한 것을 말한다.
+ 	ex) font_family 클래스에 해당되는 tag를 font-family : sans-serif; 현태로 설정
+*/	
+	.font_family01{font-family:sans-serif;}
+	.font_family02{font-family:serif;}
+	.font_family03{font-family:fantasy;}
+	.font_family04{font-family:cursive;}
+	.font_family05{font-family:monospace;}
+
+/*
+ 3. font-style : font의 기울기
+ 	ex) font_style 클래스에 font-style을 italic으로 설정
+*/
+	.font_style01{font-style:italic;}
+
+/*
+ 4. font-weight : font의 두께 조정
+ 	ex) font_weight 클래스에 font-weight를 bold로 설정
+*/	
+	.font_weight01{font-weight:bold;}
+
+/* html body에 있는 tag<p>에 class가 font_style01, font_weight, font_big을 한꺼번에 설정하려면?
+	<p class="정의된클래스1 정의된클래스2">
+*/	
+	.font_style02{font-style:inherit;}
+	.font_weight02{font-weight:lighter;}
+
+/*
+ 5. line-height : 글자의 높이를 지정 (속성값:px)
+ 	ex) h1을 line-height를 10~60px 단위로 다르게 처리하세요
+*/	
+	.a{line-height:10px; color:red;}
+	.b{line-height:20px; color:orange;}
+	.c{line-height:30px; color:yellow;}
+	.d{line-height:40px; color:green;}
+	.e{line-height:50px; color:blue;}
+	.f{line-height:60px; color:pink;}
+</style>
+
+</head>
+<body>
+	<p>글자크기 기본</p>
+	<p class="cls01">글자크기 32px</p>
+	<p class="cls02">글자크기 2em</p>
+	<p class="cls03">글자크기 250%</p>
+	<p class="cls04">글자크기 large</p>
+	<p class="cls05">글자크기 small</p>
+	<p class="font_family01">안녕하세요. 폰트형태 : sans-serif</p>
+	<p class="font_family02">안녕하세요. 폰트형태 : serif</p>
+	<p class="font_family03">안녕하세요. 폰트형태 : fantasy</p>
+	<p class="font_family04">안녕하세요. 폰트형태 : cursive</p>
+	<p class="font_family05">안녕하세요. 폰트형태 : monospace</p>
+	<p class="font_style01">안녕하세요 폰트스타일 : italic</p>
+	<p class="font_weight01">안녕하세요 폰트웨이트 : bold</p>
+	<p class="font_style02 font_weight02 cls01">다중클래스 적용. style은 inherit. weight은 lighter. 글자크기는 32px</p> 
+	<h1 class="a">안녕하세요. line-height:10px</h1>
+	<h1 class="b">안녕하세요. line-height:20px</h1>
+	<h1 class="c">안녕하세요. line-height:30px</h1>
+	<h1 class="d">안녕하세요. line-height:40px</h1>
+	<h1 class="e">안녕하세요. line-height:50px</h1>
+	<h1 class="f">안녕하세요. line-height:60px</h1>
+
+	
+</body>
+</html>

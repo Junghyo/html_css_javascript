@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+# filter selector
+요소:button : 해당 속성에 type이 button인 것에 글자색상을 blue로 처리하세요.
+$("input:button").css("color","blue");
+ex) checkbox, file, image...
+
+요소:checked : 주로 type=radio, checkbox에서 활용되는 것으로 해당 요소가 선택되어진 것에 대한 처리를 할 떄 활용
+$("input[name='gender']:checked").val();
+요소:selected : select에서 해당 요소가 선택되어진 것에 대한 처리
+$("slelect > option:selected").val();
+<select>
+	<option selected>서울</option>
+</select>
+
+# 기타 filter 요소들
+요소:disalbed -> 비활성화된 입력양식 선택
+$("input:disabled")
+
+요소:enabled -> 활성화된 입력양식 선택
+$("input:enabled").val("업력준비완료");
+
+요소:focus->포커스 즉 클릭하는 순간 처리할 내용
+<input value="id를 입력하세요"/>
+<input value="이름을 입력하세요"/>
+$("input:focus").val(""); 클릭시 기존 value값 삭제
+*/
+	$(document).ready(function(){
+		var initMsg=["이름을 입력하세요", "[YYYY/MM/DD]형식입력","아이디를 입력하세요"];
+		$("input[name=name01]").val(initMsg[0]);
+		$("input[name=birth]").val(initMsg[1]);
+		$("input[name=id]").val(initMsg[2]);
+		//속성 객체를 통해 초기 데이터 할당.
+	});
+	function chk(){
+		$("input:focus").val("");
+	};
+
+</script>
+<style type="text/css">
+</style>
+	
+</head>
+<body>
+	<h1>h1: 회원가입</h1>
+	이름 : <input type="text" name="name01" onclick="chk()"/><br>
+	생년월일 : <input type="text"name="birth" onclick="chk()"/><br>
+	ID: <input type="text"name="id" onclick="chk()"/><br>
+	<br><br><br><br><br>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('h1').attr("align","center");				// h1의 기본 속성인 align의 값을 center로 지정한다.
+		$('h1').css("background","tomato");			// h1의 background값을 tomato로 지정한다.
+		$('h1:even').css("color","blue");			// 순번이 짝수인 h1의 color값을 blue로 지정	   짝수:even
+		$('h1:odd').css("color","green");			// 순번이 홀수인 h1의 color값을 green로 지정   홀수:odd
+		$('h1:eq(4)').css("color","black");			// h1의 index 순으로 4번째인 것에 대한 color값을 black로 지정. index는 0부터 시작.
+	});
+</script>
+
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+	<h1>안녕하세요</h1>
+</body>
+</html>

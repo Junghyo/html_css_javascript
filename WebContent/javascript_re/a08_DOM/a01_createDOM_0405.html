@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/*
+ # 문서 객체 모델(DOM Document Object Model)
+ - 웹브라우저가 html 페이지를 인식하는 방식 또는 document 객체와 관련된 집합을 의미한다.
+ - 문서 객체 모델을 이용하면 현재 화면에서 tag객체를 동적으로 추가, 수정, 삭제를 처리할 수 있다.
+ 
+ # 문서객체 계층 구조 모델
+ 		 		HTML
+ 	head					body
+ css	script			h1		 table
+ 
+ # 문서 객체 만들기
+ Create : 생성관련된 내용
+ 
+ Append : 객체들의 하위에 추가
+ 
+ Child : 포함될 하위 객체를 지칭
+ 
+ Element("태그이름") : 요소(tag)
+ 	- ex) h1, p
+ 	
+ Text Nod("text. 즉, 레이블내용") : 화면에 나타나는 레이블 내용
+ 	- ex) h1 text 내용, p text 내용
+ 	
+ # 문서 객체 생성하기
+ 1) 문서 객체를 만들면서 화면에 적용하려면
+ - onload한 상태 : 화면을 전체 인식할 수 있는 상태에서 시작해야 함.
+ window.onload.$(document).ready()에서 함수를 호출한 후에 처리
+ 
+ 2) DOM 객체 생성 
+ - createElement("태그이름") : tag요소를 생성합니다.
+ 		ex) var h01 = document.createElement("h1");
+ - createTextNode("레이블내용") : tag 하위에 label내용을 넣을 TextNode를 생성합니다.
+ 		ex) var title01 = document.createTextNode("안녕하세요");
+ - tag요소의 하위에 label의 객체를 추가 : appendChild
+ 		ex) h1.appendChild(title01);
+ - body부분에 할당 처리
+ 		ex) document.body.appendChild(h1);	-- 화면에서 출력
+*/
+
+	$(document).ready(function(){
+		var h1Obj = document.createElement("h1");
+		// h1객체 생성
+		var title01 = document.createTextNode("DOM : h1객체에 들어가는 TextNode입니다.");
+		// h1 안에 들어갈 label를 관리하는 객체(문자열)
+		h1Obj.appendChild(title01);
+		// 최상위 body <-- h1 <-- "문자열"
+		document.body.appendChild(h1Obj);
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	});
+/*
+ 객체란?
+	javascript에서 여러깆 속성값을 가진 구조를 활용하여 프로그래밍에서 보다 효과적으로 하기 위해서 사용된다.
+	예를 들어 사람이라는 객체에는 여러 속성을 가지고 있다. 
+	속성 : 이름, 나이, 생김새
+	메서드 또는 기능(움직일 수 있는) : 달리다(), 보다(), 프로그래밍을 잘하다()
+	--> javascript에서는 주로 함수로 쓰이고 있다.
+	
+ 속성과 메서드는 상호작용을 하면서 특정한 목적인 정보를 효과적으로 처리할 수 있는 객체를 만들 수 있다.
+*/
+
+/* 
+ 1. 객체를 선언. 
+ 		객체를 할당하다. : javascript 특징상 할당하는 data-type에 따라서 해당 변수의 데이터 형식이 지정된다.
+ 		객체는 {}로 초기에 할당해서 type을 지정한다. 		cf) java에서는 {}를 배열로 인식. 
+*/ 
+	var person;
+	person = {};
+
+/*
+ 2. 객체에 속성지정하기
+ 속성 : 객체에 포함한 고유의 데이터를 할당하기 위한 변수. 특징으로 볼 수 있어서 이데이터에 따라서 메서드(함수)에 영향을 미칠 수 있다.
+
+ ex) 사람의 속성에 이름이라는 속성을 가지면 이 이름으로 다른 사람과의 관계에 있어서 불려지는 경우, 다른 곳으로 전입/전출하는 경우, 
+ 	  또는 행정서류에 기입하는 내용이 달라지게 된다. 그 만큼 속성값에 따라서 다른 처리를 하는 것을 말한다.
+ 		
+ ex) tag의 h1이라는 객체에 속성이 align이 있는데 이 align의 값이 center, left, right에 따라서 화면에서 보여지는 것이 달라지게 된다.
+*/
+
+/*
+ 속성 지정하기
+ 1) 객체명.속성명 = 데이터;
+ 		객체에 특정한 속성에 속성값을 할당한다.
+ 		객체는 여러 속성을 가질 수 있다. 동일한 객체에서 또 다른 속성을 정의해서 데이터를 할당 하는 것이 가능하다.
+ ex) person이라는 객체에 name이라는 속성을 정하고 문자열로 '홍길동'이라는 데이터를 할당하고자 하면 아래와 같이 처리하면 된다.
+*/
+	person.name="홍길동";		// 속성name을 정의하고 문자형 데이터 할당
+	person.age=29; 			// 속성 age을 추가로 정의하고 다른 유형의 데이터 할당(숫자형)
+// 속성은 이렇게 한번 할당되면 객체이름.속성 으로 호출하여 활용될 수 있다.
+// console.log()에 출력. console : 객체, log : 속성 
+	console.log("person의 이름은 "+person.name);
+	console.log(person.name+"의 나이는 "+person.age);
+	
+/*
+ 2) 객체 선언과 동시에 속성 설정하기
+ 		객체는 생성 이후에 		ex) var person={}; 		(객체 생성)
+ 		속성을 설정을 해도 되지만	    person.name="홍길동"  (객체의 속성 정의 및 데이터 할당)
+ 		객체 생성과 동시에 속성을 선언하고 데이터를 할당 할 수 있다.
+ 		--> json(Javascript Onject Notation) 형식 : var 객체명 ={속성1:속성값1, 속성2:속성값2};
+ 
+ ex) fruit를 json 형식으로 속성과 속성값을 지정해보자. 		
+ */ 
+ 	var fruit = { name:"바나나", price:2000, 파는곳:"홈플러스" };
+// 이렇게 정의된 객체는 객체명.속성으로 접근해서 활용할 수 있다. 활용 -- 호출하는 것 뿐만 아니라 재할당도 가능.
+// 호출은 fruit의 객체에 name이라는 이름으로 호출하여 사용될 수 있다.
+	console.log(fruit);
+	alert("fruit의 이름: "+fruit.name);
+	alert("fruit의 가격: "+fruit.price);
+	alert("fruit의 판매점: "+fruit.파는곳);
+// 이름을 변경하고자 한다.
+	fruit.name="고무고무열매";
+	alert("fruit의 이름: "+fruit.name);
+
+/* 확인예제.
+ 객체명 : favorProduct, 속성으로 물건명, 가격, 믈건을 구입내지 취득한 장소
+ 1) 객체 생성 후 속성값 지정
+ 2) 객체 생성과 속성값을 동시에 지정
+*/
+	var favorProduct={};
+ 	favorProduct.name="컴퓨터";
+ 	favorProduct.price=7000000;
+ 	favorProduct.buyWhere="용산 전자상가";
+ 	console.log(favorProduct);
+ 	
+ 	var favorCar={name:"롤스로이스", price:2000000000000, buyWhere:"카센터"};
+ 	console.log("좋아하는 차이름: "+favorCar.name);
+ 	console.log(favorCar.name+" 가격: "+favorCar.price);
+ 	console.log(favorCar.name+" 판매처: "+favorCar.buyWhere);
+ 	
+/*
+ 배열
+ 	1) 선언 
+ 		var 배열이름;
+ 	2) 배열데이터 type 지정과 할당
+ 		 배열이름 = [];
+ 	3) 데이터 할당
+ 	index : 배열을 접근하기 위한 고유 번호 0부터 시작.
+ 		 배열이름[index] = 데이터;		ex) fruit[0]="사과"; fruit[1]="바나나";
+ 	4) 배열의 갯수 : 배열이름.length;
+ 	5) 배열의 선언, 데이터 할당
+ 		var 배열이름 = [데이터1, 데이터2, 데이터3]; ex) var books=["html5", "javascript", "자바"];
+ 												 books[0], books[1]
+*/
+	var books=["html5", "javascript", "자바"];
+ 	console.log("도서 1번째: "+books[0]);											 
+ 	console.log("도서 2번째: "+books[1]);											 
+ 	console.log("도서 3번째: "+books[2]);
+ 	books[2]="jsp";
+ 	console.log("도서 3번째(변경): "+books[2]);
+// 반복문을 통한 호출. books.length : 배열의 크기
+	console.log("\tfor문을 통한 배열데이터 출력!");
+	for(var idx=0; idx<books.length; idx++){
+	// 초기값 idx=0부터 시작해서 idx가 books의 배열크기보다 1 작게.
+	// index의 최종번호는 배열의 크기보다 1 적기 때문에. books 배열의 크기는 3이지만 index번호는 0,1,2이기 때문
+	console.log("도서"+(idx+1)+"번째"+books[idx]);
+	}	
+/* 확인예제.
+ 1) weekendPlans라는 배열을 만들고 배열 객체 생성과 핟당처리해서
+ 	반복문으로 화면단에 다음과 같이 출력하세요.
+ 		- 주말 계획-
+ 			제목					시간			인원
+ 		1. 1차 프로젝트 쫑파티
+ 		2. 등산
+ 		3. 잠
+*/	console.log("- 주말계획 -");
+	var weekendPlans=["1차 프로젝트 쫑파티", "등산", "잠"];
+ 	for(idx=0; idx<weekendPlans.length; idx++){
+ 		console.log((idx+1)+"."+weekendPlans[idx]);
+ 	}
+
+/*
+  단일 배열은 단일 데이터만 출력해서 활용할 수 있다.
+  이때, 제목과 시간 인원이라는 속성을 가진 객체단위 배열을 활용하면 효과적으로 list를 처리할 수 있다.
+ 1. 배열객체를 만들려면 단위 객체를 먼저 만들어야 한다.
+ 2. 단위를 배열에 할당처리
+ 3. 배열객체를 수정, 추가 등록, 삭제할 수 있어야 한다.
+*/
+// 단위객체의 속성 및 속성값 설정하기
+
+// 1. 단위 객체 생성
+	var weekPlan01 = {title:"1차 프로젝트 쫑파티", times:"오늘 저녁(3/30)", together:5};
+	var weekPlan02 = {title:"등산", times:"토(4/01)", together:4};
+	var weekPlan03 = {title:"잠", times:"내일(3/31)", together:1};
+// 2. 단위 객체를 배열에 할당처리 (배열객체 선언과 할당)
+	var weekendPlan2 = [];
+// index 번호로 할당. 배열이름[index 0부터] = 할당할 객체
+	weekendPlan2[0] = weekPlan01;	// 배열에 객체가 할당된 상황
+	weekendPlan2[1] = weekPlan02;
+	weekendPlan2[2] = weekPlan03;
+/* 3. 배열 객체의 속성을 접근해서 호출하기	
+ weekendPlan2[0] --> 실제 들어가 있는 객체 : weekPlan01
+ weekPlan01.title로 해당 속성의  title을 호출했듯이 
+ weekendPlan2에 할당된 첫번째 객체의 title을 호출하려면
+ weekendPlan2[0].title로 호출하면 된다.
+*/
+	console.log(weekendPlan2[0].title);
+	console.log(weekPlan01.times);
+	console.log(weekendPlan2[0].title+":"+weekendPlan2[0].times+":"+weekendPlan2[0].together);
+	console.log(weekendPlan2[1]);
+// 두번째 데이터, 세번째 데이터를 호출하려면?	
+	for(idx=0; idx<weekendPlan2.length; idx++){
+		console.log((idx+1)+". "+weekendPlan2[idx]);
+	}	
+
+/* 확인예제.
+ 변수로 favorMoives : 가장 좋아하는 영화
+ title		관람일	관람장소
+ 배열 객체 3개를 만들고 데이터를 할당한 후에 출력하세요
+*/
+	var movie01={제목:"해리포터", 관람일:"오늘", 관람장소:"집"};
+	var movie02={제목:"해빙", 관람일:"어제", 관람장소:"CGV"};
+	var movie03={제목:"로건", 관람일:"1년전", 관람장소:"MEGABOX"};
+	var favorMoives=[];
+	favorMoives[0]=movie01;
+ 	favorMoives[1]=movie02;
+  	favorMoives[2]=movie03;
+  	console.log(favorMoives[0]);
+  	console.log(favorMoives[1]);
+ 	 console.log(favorMoives[2]);
+	for(idx=0; idx<favorMoives.length; idx++){
+	  	console.log("좋아하는 영화 "+(idx+1)+". "+favorMoives[idx].제목);
+  	}
+	for(idx=0; idx<favorMoives.length; idx++){
+	  	console.log("좋아하는 영화 "+(idx+1)+". "+favorMoives[idx]);
+  	}
+	var show="no\t제목\t관람일\t관람장소\n";
+	console.log(show);
+  	for(idx=0; idx<favorMoives.length; idx++){
+	  	console.log((idx+1)+"\t"+favorMoives[idx].제목+"\t"+favorMoives[idx].관람일+"\t"+favorMoives[idx].관람장소);
+
+ 	}
+</script>
+
+
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1></h1>
+	<p></p>
+	<table>
+		<tr><td></td></tr>
+	</table>
+</body>
+</html>

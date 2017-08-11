@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제. 
+ confrim을 활용해서 지금 오전입니까?
+ 확인일때는 "Good Morning! 좋은 하루 시작하세요!"
+ 취소일때는 "Good job!! 활기찬 오후 되시길!"
+*/
+	var isAm=confirm("지금 오전입니까?");
+	if(isAm){
+		alert("Good Morning! 좋은 하루 시작하세요!");
+	}else{
+		alert("Good Job!! 활기찬 오후 되시길!");
+	}
+	var num01=25;
+	var num02=12;
+	var isSame=num01==num02;
+	alert("첫번째 숫자: "+num01);
+	alert("두번째 숫자: "+num02);
+	var isRight=confirm("두 숫자가 동일합니까?");
+	if(isSame==isRight){
+		alert("정답");
+	}else{
+		alert("오답");
+	}
+	var num03=parseInt(prompt("첫번째 숫자 입력하세요",""));
+	alert("첫번째 숫자 : "+num03);
+	var num04=parseInt(prompt("두번째 숫자 입력하세요",""));
+	alert("두번째 숫자 : "+num04);
+	var isSame01=num03==num04;
+	var isRight01=confirm("두 숫자가 동일합니까?");
+	if(isSame01==isRight01){
+		alert("정답");
+	}else{
+		alert("오답");
+	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

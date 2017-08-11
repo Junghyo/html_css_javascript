@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+</script>
+<style type="text/css">
+/*
+ css 속성, line 속성
+ block : tag 중에서 줄바꿈 속성을 함께 가지고 있는 것.
+ 	ex) h1, p
+ 
+ inline : tag 중에서 줄바꿈 속성이 없어서 tag를 나열하면 한줄에 내용이 쭉 나타남	
+ 	ex) font, input
+ 
+ css에서 tag의 기본속성(block, inline) 변경 가능
+ display:inline; 해당내용이 나열될 때 줄바꿈 처리를 하지 않음(block -> inline)
+ display:block; 해당내용이 나열될 때 줄바꿈 처리(inline -> block)
+ 
+ ex) 예제.
+ 	id값이 box인 객체를 줄바꿈 처리가 가능하도록 속성 변경 	
+ */
+ 	#box{
+ 		display:inline;
+ 		background-color:yellow;
+ 		width:300px; height:50px;
+ 		margin:10px;
+ 		}
+ /*
+ 	div(layer)에 일반적인 속성들
+ 		width : 넓이
+ 		height : 높이
+ 		margin : 내용과 div 틀 사이의 간격
+ */
+ 
+</style>
+
+</head>
+<body>
+	<div id="box">display:block;을 이용해 span tag속성 변경
+		<span >span은 inline속성. 하지만 css로 block처리!</span>
+		<span >span은 inline속성. 하지만 css로 block처리!</span>
+	</div>
+	<h1>block속성을 가진 h tag</h1>
+	<h2>block속성을 가진 h tag</h2>
+	<h3>block속성을 가진 h tag</h3>
+	<h4>block속성을 가진 h tag</h4>
+	<p>block속성을 가진 p tag</p>
+	<p>block속성을 가진 p tag</p>
+	<p>block속성을 가진 p tag</p>
+	<ul>
+		<li>block속성을 가진 li tag</li>
+		<li>block속성을 가진 li tag</li>
+		<li>block속성을 가진 li tag</li>
+		<li>block속성을 가진 li tag</li>
+	</ul>
+	<br><br>
+	<font>inline속성을 가진 font tag1</font>
+	<font>inline속성을 가진 font tag2</font>
+	<font>inline속성을 가진 font tag3</font>
+	<input value="inline속성을 가진 input tag1"/>
+	<input value="inline속성을 가진 input tag2"/>
+	<input value="inline속성을 가진 input tag3"/>
+	<input value="inline속성을 가진 input tag4"/>
+	<span>inline속성을 가진 span tag1</span>
+	<span>inline속성을 가진 span tag2</span>
+	<span>inline속성을 가진 span tag3</span>
+
+ <!--
+ 과제(homework)
+ 기본 속성이 block인 tag가 나열된 것을 inline으로 속성을 바꾸어서 화면에 출력하세요.
+ h1, p, li ==> inline으로 변경하고, 배경색상을 나타내서 출력하세요.
+ 	
+ 내가 아는 컴퓨터 하드웨어 지식
+ 시스템에서 속도 처리에 중요한 것을 나열
+ cpu 	ram		hardDisk
+ -->
+ 	<div class="a">
+	<h1>내가 아는 컴퓨터 하드웨어 지식</h1>
+	<p>시스템에서 속도 처리에 중요한 것을 나열</p>
+	<ul>
+		<li>cpu</li>
+		<li>ram</li>
+		<li>hardDisk</li>
+	</ul>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

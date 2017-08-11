@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 가위 바위 보 게임
+한 사람이 가위 바위 보를 내고 다음 사람이 가위 바위 보를 임의로 냈을 때 승리는 prompt창에서 처리.
+1) 팀명 입력하기
+	- var teamName = prompt("팀명을 입력하세요", "홍팀");
+	- prompt창으로 문자열을 입력받는데 입력하지 않고 확인을 누르면 teamName이 홍팀으로 입력됨.
+
+2) 가위바위보 임의 처리
+	- var games=["가위","바위","보"]; index(0,1,2)
+	- games[0]="가위"; games[1]="바위"; games[2]="보";
+	- random범위 : 0~2 games[랜덤범위];
+	- games[ parseInt(Math.random()*3) ] --> 0~2
+*/
+	var teamName1=prompt("팀명을 입력하세요.","홍팀");
+	alert("입력한 팀 이름 : "+teamName1);
+	var games=["가위", "바위", "보"];
+	var ranIdx1 = parseInt( Math.random()*3 );
+	alert( teamName1+" : "+games[ranIdx1] );
+	var teamName2=prompt("팀명을 입력하세요.","청팀");
+	alert("입력한 팀 이름 : "+teamName2);	
+	var ranIdx2 = parseInt( Math.random()*3 );
+	alert( teamName2+" : "+games[ranIdx2] );
+	if(ranIdx1==ranIdx2){
+		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+"비겼습니다.");
+	}else if(ranIdx1==0 && ranIdx2==1){
+		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+teamName2+" 승리");
+	}else if(ranIdx1==1 && ranIdx2==2){
+		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+teamName2+" 승리");
+	}else if(ranIdx1==2 && ranIdx2==0){
+		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+teamName2+" 승리");
+	}else{
+		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+teamName1+" 승리")
+	}	
+/*과제 1. (homework 1)
+ 해당 팀에 대한 승패
+ @@@ 팀 승
+ 무승부
+ 승부 : 가위(0)>보(2), 바위(1)>가위(0), 보(2)>바위(1)
+ - index번호를 기준으로 +2가 같은 index승
+ - 나머지 연산자(%)사용
+ */
+  	if(ranIdx1==ranIdx2){
+	  	alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+"비겼습니다.");
+  	}else if( (ranIdx1+2)%3==ranIdx2 ){	// 첫번째 팀의 index번호에서 2를 더한 값과 두번째팀의 index번호가 같으면 첫번째팀 승리
+  		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+teamName1+" 승리");
+  	}else{
+  		alert(teamName1+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n"+teamName2+" 승리");
+  	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

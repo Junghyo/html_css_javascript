@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 테이블 생성
+		var div="";
+		div+="<table border=1>";
+		for(var i=0; i<3; i++){
+			div+="<tr>";
+			for(var j=0; j<3; j++){
+				div+="<th></th>";
+			}
+			div+="</tr>";
+		}
+		div+="</table>";
+		$("body").html(div);
+		
+		// 테이블 css
+		$("table").css({width:"300px", height:"300px", borderCollapse:"collapse"});	
+		
+		// th 배열 정리
+		var ths=document.querySelectorAll("th");
+		
+
+		
+		$("th").html( function(idx){return (idx)+1;});
+		$("th").on({mouseenter:function(){
+						$(this).css("background","#ffb3b3");			
+					},
+					mouseleave:function(){
+						$(this).css("background","");
+					},
+					click:function(){
+						$(this).css("color","blue");
+					}
+		})
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

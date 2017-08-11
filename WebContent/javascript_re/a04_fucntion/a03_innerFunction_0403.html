@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 출력
+1) alert("기본 경고창 출력");
+
+2) confirm("확인창");
+	- 입력값으로 '화면에 출력될 내용'. return값은 boolean(true/false)
+	- 프로세스 확인 -> return ture;     프로세스 취소 -> return false;
+	
+3) prompt("입력값1", "입력값2");
+	- 입력값1 : 화면에 title내용 출력
+	- 입력값2 : return할 초기 default값
+	- 프로세스 : 확인 -> 입력문자열		프로세스 : 취소 -> null
+	- return : 입력한 내용을 문자열로 return
+*/
+	var isMan=confirm("남자입니까?");
+	if(isMan){
+		alert("남자인지 여부 : "+isMan);
+		alert("남자 ㅎㅇㅎㅇ");
+	}else{
+		alert("남자인지 여부 : "+isMan);
+		alert("여자 ㅎㅇㅎㅇ");
+	}
+	var num01=22;
+	var num02=7;
+	var isCorrect=num01<num02;
+	var result01=confirm("22는7보다 작습니까?");
+	if(isCorrect==result01){alert("정답")
+	}else{
+		alert("오답");
+	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

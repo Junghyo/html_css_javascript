@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제.
+ 부모창
+ 날짜: [  ][달력 버튼] 달력 버튼 클릭시
+	
+*/
+ var aprilDate;
+ function see4(){
+	 aprilDate=window.open("a06_calander_0405.html","aprilDate","height=450, width=400");
+ }
+ function move4(){
+	 aprilDate.moveBy(200,200);
+	 aprilDate.focus();
+ }
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	날짜 : <input type="text" id="display">
+	<input type="button" id="calander" value="달력보기" onclick="javascript:see4()">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<input type="button" value="달력움직이기" onclick="javascript:move4()">
+</body>
+</html>

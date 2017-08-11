@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # selector 예제
+ list 형태의 테이블에 정렬 처리나 색상 처리에 관한 내용.
+ 초기 속성으로 해당 내용에 대한 처리.
+ document.querySelectorAll(선택자)
+ 사원 리스트
+ 
+ selector : 
+ 1) tag명은 그대로 tag명으로 인식
+ 2) id값은 #id명으로 인식
+ 3) class명은 .class명으로 인식
+*/
+	$(document).ready(function(){
+		document.querySelector("h1").style.background="tomato";
+		document.querySelector("h1").style.textAlign="center";
+		// 첫번째 h1 tag의 배경 색상을 slector 형식으로 변경
+		// querySelector는  처음에만 적용
+		document.querySelectorAll("h1")[1].style.textAlign="center";
+		var salList = document.querySelectorAll(".sal");
+		// document.querySelectorAll : 대상 객체의 배열
+		for (var idx=0; idx<salList.length; idx++){
+			salList[idx].style.textAlign="right";
+		}
+		document.querySelector(".title").style.background="black";
+		document.querySelector(".title").style.color="red";
+		// title(사원번호, 사원명...) 배경색 및 글자색상 처리
+		var setCenter = document.querySelectorAll(".center");
+		// class명이 center인 객체를 배열화
+		for(var i=0; i<setCenter.length; i++){
+		// class명이 center인 객체들의 text위치를 중앙으로 처리	
+			setCenter[i].style.textAlign="center";
+		}
+		document.querySelector("table").style.border="1px solid black";
+		document.querySelector("table").style.width="500px";
+		document.querySelector("table").style.height="500px";
+		document.querySelector("table").style.borderCollapse="collapse";
+		document.querySelector("table").style.margin="auto";
+		document.querySelector("table").style.background="white";
+		// 테이블에 border라인 및 사이즈 처리
+		var tdSpace = document.querySelectorAll("td");
+		// td 객체 배열화
+		for(var i=0; i<tdSpace.length; i++){
+		// td 객체들에 border라인 처리	
+			tdSpace[i].style.border="1px solid black";
+		};
+		var j=0;
+		var bodyCol=document.getElementsByTagName("body")[0];
+		var color=["#ff8080","#ffd280","#ffff80","#80ff80","#8080ff","#4d4dff","#ff80ff"];
+		setInterval(function(){
+			bodyCol.style.background=color[j%8];
+		j++;	
+		},100);
+	});
+
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<h1>사원 리스트(1)</h1>
+	<h1>사원 리스트(2)</h1>
+	<table>
+		<tr class="title">
+			<th>사원번호</th>
+			<th>사원명</th>
+			<th>급여</th>
+			<th>부서명</th>
+		</tr>
+		<tr>
+			<td>7001</td>
+			<td class="center">양상문</td>
+			<td class="sal">9000</td>
+			<td class="center">감독</td>
+		</tr>
+		<tr>
+			<td>7002</td>
+			<td  class="center">박용택</td>
+			<td class="sal">7000</td>
+			<td  class="center">3번타자</td>
+		</tr>
+		<tr>
+			<td>7003</td>
+			<td  class="center">오지환</td>
+			<td class="sal">6000</td>
+			<td  class="center">유격수</td>
+		</tr>
+		<tr>
+			<td>7004</td>
+			<td  class="center">류제국</td>
+			<td class="sal">8000</td>
+			<td  class="center">에이스</td>
+		</tr>						
+	</table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 문서 탐색 filter
+ end() : 체이닝(속성을 연결) 기능을 종료시키고 다른 속성을 처리 할 때 활용	-- 선행된 속성 초기화 기능
+*/
+ 
+	$(document).ready(function(){
+		$("h1").css("background","orange").filter(":even").css("color","green").
+		// 배경색 orange는 공통, index번호가 짝수인 것만 글자색 green 처리
+			filter(":odd").css("color","blue");
+			// 현재 검색된 even 안에서 홀수 index번호인 것만 글자색 blue 처리
+		$("h2").css("background","skyblue").filter(":even").css("color","red").end().
+		// end() 앞에 filter 내용을 처리하여 끝내고 초기 설정으로 돌아감.
+		filter(":odd").css("color","yellow");
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>h1: index:0 / 짝수index=0</h1>
+	<h1>h1: index:1</h1>
+	<h1>h1: index:2 / 짝수index=1</h1>
+	<h1>h1: index:3</h1>
+	<h1>h1: index:4 / 짝수index=2</h1>
+	<h1>h1: index:5</h1>
+	<h1>h1: index:6 / 짝수index=3</h1>
+	<h1>h1: index:7</h1>
+	<h2>h2: index:0</h2>
+	<h2>h2: index:1</h2>
+	<h2>h2: index:2</h2>
+	<h2>h2: index:3</h2>
+	<h2>h2: index:4</h2>
+	<h2>h2: index:5</h2>
+	<h2>h2: index:6</h2>
+	<h2>h2: index:7</h2>
+
+</body>
+</html>

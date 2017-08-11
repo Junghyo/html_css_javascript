@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*확인예제.
+ 숫자값을 임의로 두 개 입력 받아서
+ 합산된 값이 10 이상일 때 WIN!
+ 합산된 값이 10 미만일 때 LOST!  
+*/
+	var num01=Math.floor( Math.random()*6+1 );
+	alert("첫번째 수 : "+num01);
+	var num02=Math.floor( Math.random()*6+1 );
+	alert("두번째 수 : "+num02);
+	var sum=num01+num02;
+	alert("두 수의 총합 : "+sum);
+	if(sum>=5){
+		alert("WIN!");
+	}else{
+		alert("LOST!");
+	}
+
+/*
+ 임의의 1~6
+ R=Math.random() 0.0 <= R < 1.0
+ *n : 가지수
+ +k : 시작숫자
+ parseInt : 정수로 변환
+ 1~6까지 : n=6, k=1
+ 화면이 호출될 때 마다 할당처리.
+*/
+	var num03 = parseInt( Math.random()*6 )+1;
+	alert("첫번째 주사위 숫자수 : "+num03);
+	var num04 = parseInt( Math.random()*6 )+1;
+	alert("두번째 주사위 숫자수 : "+num04);
+	var sum02 = num03+num04;
+	alert("두 주사위수 총합 : "+num03+" + "+num04+" = "+sum02);
+	var isOver7=confirm("두 주사위수 합이 7 이상인가요?");
+// 확인을 누르고 실제값이 7이상이면 WIN(승리)
+// isOver10이 true이고 sum>=7 이면 조건처리
+	if(isOver7 && sum02>=7){
+		alert("WIN(승리)");
+	}else{
+		alert("LOST(패배)");
+	}
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

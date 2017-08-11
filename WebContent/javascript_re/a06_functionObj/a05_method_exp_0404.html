@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제
+ 객체
+ 	- DailyMoneyPocket(지갑) - 하루동안 입출금
+ 	- 초기입력값 : 날짜, 소유자이름, 초기금액
+ 메서드1.
+ 	- spendMoney(지출내역, 지출금액)
+ 	- @@@에 @@@지출
+ 	- 지출금액이 현재 잔액보다 크면 잔액 부족
+ 	- return 총잔액
+  	
+*/
+	function DailyMoneyPocket(date, name,money){
+ 		this.date=date;
+ 		this.name=name;
+ 		this.nowMoney=money;
+ 		this.spendMoney=function(where, outMoney){
+ 			var returnMsg="";
+ 			console.log(this.date+"인 오늘 "+this.name+"은 현재 돈이 "+this.nowMoney+"원이 있다.");
+ 			if(this.nowMoney>=outMoney){
+ 				returnMsg=where+"에서 "+outMoney+"원 지출한다!";
+ 				this.nowMoney-=outMoney;
+ 				returnMsg+="\n"+this.name+"은 거스름돈 "+this.nowMoney+"원을 받았다!";
+ 			}else{
+ 				outMoney-=this.nowMoney;
+ 				returnMsg=outMoney+"원이 모자르다!. 빡치게";
+ 			}return returnMsg;
+ 		}
+ 	};
+ 	var pocket = new DailyMoneyPocket("04/04", "호날두",20000);
+ 	var resultMsg = pocket.spendMoney("피시방",15000);
+ 	console.log(resultMsg);
+ 	
+	function MyPocket(name, date, money){
+ 		this.name=name;
+ 		this.date=date;
+ 		this.nowMoney=money;
+ 		console.log(this.name+"는 "+this.date+" 현재 지갑에 "+this.nowMoney+"원이 있다!");
+ 		this.withdraw=function(getDate,getMoney){
+ 			this.nowMoney+=getMoney;
+ 			console.log(this.name+"는 "+getDate+"에 "+getMoney+"원을 출금했다. 현재 지갑에 "+this.nowMoney+"원이 있다!");			
+ 		}
+ 		this.spendMoney=function(giveDate, where, outMoney){
+ 			var returnMsg="";
+ 			if(this.nowMoney >= outMoney){
+ 				this.nowMoney-=outMoney
+ 				var spendDo = this.name+"은 "+giveDate+"에 "+where+"에서 "+outMoney+"원 만큼 돈을 낭비했다!";
+ 				spendDo+="\n그래서 현재 남은 돈은 "+this.nowMoney+"원이다!";
+ 				console.log(spendDo);
+ 			}else{
+ 				outMoney-=this.nowMoney;
+ 				returnMsg=("큰일이다!"+giveDate+"에 "+where+"에서 돈을 낭비하려는데\n"+outMoney+"원 모자르다! 빡친다!");
+ 			}return returnMsg;
+ 		}
+ 		this.restMoney=function(){
+ 			return this.nowMoney;
+ 		}
+ 	};
+ 	var pocket = new MyPocket("메시", "04/04",3750);
+ 	pocket.withdraw("04/04",10000);
+ 	pocket.withdraw("04/04",7500);
+ 	pocket.withdraw("04/05",9000);
+ 	pocket.withdraw("04/05",13000);
+ 	pocket.withdraw("04/06",20000);
+ 	pocket.spendMoney("04/06","피시방",4000);
+ 	pocket.spendMoney("04/06","김밥천국",2000);
+ 	pocket.spendMoney("04/07","편의점",1650);
+ 	pocket.spendMoney("04/07","옷가게",40000);
+ 	pocket.spendMoney("04/08","면세점",1270);
+ 	pocket.spendMoney("04/09","피시방",2500);
+ 	var resultMsg=pocket.spendMoney("04/10","구멍가게",25000);
+ 	console.log(resultMsg);
+ 	pocket.spendMoney("04/11","피시방",2500);
+ 	var restMsg=pocket.restMoney();
+ 	console.log("돈을 낭비한 지금 "+pocket.name+"는 현재 돈이 "+restMsg+"원 밖에 남지 않았다!");
+ 
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+# jquery의 이벤트 종류와 연결
+1. focus : 마우스 크릭하고 그 클릭을 유지한 상태
+$("input[name=id]").focus();
+$(객체).on("focus",처리할 함수);
+
+2. blur : 마우스 클릭하고 그 클릭을 다른 곳으로 클릭하는 순간 ex) id를 입력하고 다시 password를 입력하는 순간
+		   id입력객체(input)에서 발생하는 이벤트
+$("input[name=id]").on("blur", 처리할 함수);
+
+3. click : 클릭하는 순간
+4. dbclick : 더블클릭하는 순간 
+5. change : select에서 선택을 다른 것을 하는 순간
+6. keyup : 키를 입력하고 손을 떼는 순간		   
+*/
+
+	$(document).ready(function(){
+		$("select").on("change",function(){
+			alert($(this).val());
+			$("h2").html("선택된 값은 "+$(this).val()+"입니다.");
+		})
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	선택하세요 : 
+	<select>
+		<option>서울/경기</option>
+		<option>강원도</option>
+		<option>충청도</option>
+		<option>전라도</option>
+		<option>경상도</option>
+		<option>제주도</option>
+	</select><br>
+	<h2></h2>
+</body>
+</html>

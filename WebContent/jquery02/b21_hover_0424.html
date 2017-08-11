@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # hover
+ 마우스오버, 마우스아웃의 기능을 한번에 처리한 이벤트 함수
+ - $(객체).hover(마우스오버시 처리할 함수, 마우스 아웃시 처리할 함수);
+ - $("tr").hover(fucntion(){
+	 마우스 오버시 처리할 내용
+	},
+	function(){
+		마우스 아웃시 처리할 내용
+	}
+})
+*/
+
+	$(document).ready(function(){
+// 		$("객체").hover(마우스오버시, 마우스아웃시)
+		$("h1").hover(function(){
+			$(this).addClass("reverse");
+		}, function(){
+			$(this).removeClass("reverse");
+		})
+	});
+
+</script>
+<style type="text/css">
+	.reverse{background:blue; color:yellow;};
+</style>
+
+</head>
+<body>
+	<h1>첫번째 h1 tag </h1>
+	<h1>두번째 h1 tag </h1>
+	<h1>세번째 h1 tag </h1>
+	<h1>네번째 h1 tag </h1>
+	<h1>다섯번째 h1 tag </h1>
+	<h1>여섯번째 h1 tag </h1>
+</body>
+</html>

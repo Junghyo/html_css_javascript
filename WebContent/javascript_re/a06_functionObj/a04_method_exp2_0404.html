@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ 함수객체 이해(소스) 예제.
+ 자판기 설계
+ 생성장 입력 : 판매물건
+ 전역변수 : 현재 총 금액
+ 메서드1. : insertMoney(입력되는 Money)
+ 	- 현재 입력된 총 금액 : @@@
+ 메서드2. : clickButton()
+ 	- 금액이 적으면 금액이 부족하다.
+ 	- return 음료
+ 메서드3. : restMoneyButton()
+ 	- return 잔액
+ */
+ 
+
+ 	function SellerBox(product, price){
+	// 생성자 입력 
+		this.product=product;
+		this.price=price;
+		this.insertTotalMoney=0;
+		this.insertMoney=function(inMoney){	
+		// 메서드1.
+			this.insertTotalMoney+=inMoney;	
+			// 누적처리
+			console.log(this.product+" 자판기");
+			console.log("현재 투입된 금액 : "+this.insertTotalMoney);
+			// 출력처리
+		};
+		this.clickButton=function(){
+		// 메서드2.
+			var returnValue = "";
+			// 금액이 부족하면 "" return
+			if(this.insertTotalMoney >= this.price){
+				this.insertTotalMoney-=this.price;
+				// 잔액을 계산. this.insertTotalMoney-this.price
+				returnValue=this.product+"가 나왔습니다.";
+				console.log("구매후 남은 잔액은 "+this.insertTotalMoney+"원 입니다.");
+			}else{
+				console.log("잔액이 부족합니다.");
+			};
+			return returnValue;
+		};
+		this.restMoneyButton=function(){
+		// 메서드3.	
+			return this.insertTotalMoney;
+		};
+ };
+ 	var sellingBox01 = new SellerBox("커피", 1000);
+ 	sellingBox01.insertMoney(500);
+ 	sellingBox01.insertMoney(500);
+ 	sellingBox01.insertMoney(500);
+ 	// 메소드1의 돈 투입
+ 	var resultMsg = sellingBox01.clickButton();
+ 	// return값을 처리(화면출력이 아님.)
+ 	console.log("자판기 박스에서 나온 결과 : "+resultMsg);
+ 	var restMoney=sellingBox01.restMoneyButton();
+ 	console.log("거스름 돈은 "+restMoney);
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+
+<style type="text/css">
+
+</style>
+	
+</head>
+<body>
+	<p id="display"></p>
+	<button onclick="javascript:pop()">click</button>
+</body>
+<script type="text/javascript">
+	var word=["a","b","c","d"];
+	var number=["one","two","three","four"];
+	var kr=["가","나","다","라"];
+	var fruit=["Banana", "Orange", "Apple", "Mango","Kiwi","Melon"];
+	document.getElementById("display").innerHTML=fruit;
+	console.log(word);
+	console.log(word.toString());
+	console.log(word[0]);
+	console.log(word[0].toString());
+	console.log(word.join("-"));
+	word.push("e");
+	word.push("f");
+	
+	document.getElementById("display").innerHTML=word+"\n"+fruit;
+	function pop(){
+			fruit.sort();
+		document.getElementById("display").innerHTML=fruit;
+	}
+</script>
+</html>

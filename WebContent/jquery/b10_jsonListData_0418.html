@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+# Json List 가져오기
+var obj = {};		--> 초기화(단위객체 생성)
+var objArray=[];	--> 초기화(배열객체 생성)
+
+- 객체에 속성값을 할당
+ex) var player01={rank:1, name:"피어밴드", era:0.36};
+	 var player02={rank:2, name:"장현식", era:0.53};
+
+- 배열객체에 index, push()활용해서 추가를 한다.
+ex) var pitList=[];
+	 pitList[0] = player01;		-- 배열에 단위객체 추가
+	 pitList.push(player02);
+
+- 배열객체에 단위를 한번에 할당.
+var pitList=[{rank:1, name:"피어밴드", era:0.36},
+	 		  {rank:2, name:"장현식", era:0.53}
+			 ];
+
+# Json으로 배열 안에 배열 만들기.
+- 학생 list, 그 학생의 친구정보
+var studList=[ {"name":"홍길동", "friendList":[{"name":"김길동"},{"name":"신길동"}]} ];
+}
+
+- json은 너무 복잡하기 때문에 json validator 사이트에서 확인 후 사용 권장
+
+*/
+	$(document).ready(function(){
+		/* List형태 json Data 만들기  */
+		var player01={"rank":1, "name":"피어밴드", "era":0.36};
+		var player02={"rank":2, "name":"장현식", "era":0.53};
+		var player03={"rank":3, "name":"소사", "era":0.86};
+		var pitList=[];
+		pitList[0]=player01;
+		pitList.push(player02);
+		pitList[pitList.length]=player03;
+		var show="<tr><th>순위</th><th>이름</th><th>방어율</th></tr>";
+		$.each(pitList, function(index, player){
+			show+="<tr><th>"+player.rank+"</th><th>"+player.name+"</th><th>"+player.era+"</th></tr>";	
+		});
+
+		
+		var pitList2=[{"rank":4, "name":"양현종", "era":0.87},
+					 {"rank":5, "name":"헥터", "era":1.17}
+					];
+		$.each(pitList2, function(index, player){
+			show+="<tr><th>"+player.rank+"</th><th>"+player.name+"</th><th>"+player.era+"</th></tr>";
+		});
+		$("table").html(show);
+	});
+
+</script>
+<style type="text/css">
+	table{border:dotted;};
+</style>
+
+</head>
+<body>
+	<table>
+	</table>
+</body>
+</html>

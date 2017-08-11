@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+ selector : focus{속성:속성값;}
+ 해당 selector객체를 focus를 했을 때, 변경할 css속성 정의
+ 
+ ex) input tag에 초점을 맞출 경우에 배경색상을 노랑색으로 처리
+*/
+	input:focus{background-color:yellow;}
+</style>
+<script type="text/javascript">
+	function changeVal(obj){
+		if(obj.value == "입력하세요!!"){ // 현재 입력된 내용 삭제. 초기 문자열인 '입력하세요!!'일 때 삭제.
+			obj.value="";
+		}           
+	}
+	
+	function putId(obj){                              // ID 입력 시 공백 처리
+		if(obj.value == "id를 입력하세요"){
+			obj.value="";
+		}
+	}
+	
+	
+</script>
+</head>
+<body>
+	<h1>focus 처리시, 색상 변경</h1>
+	<input type="text" onclick="javascript:changeVal(this)" value="입력하세요!!"><br>
+	<input type="password"/><br>
+	<input type="radio"/><br>
+	<input type="checkbox"/><br>
+	<input type="date"/><br>
+	<input type="time"/><br>
+	<input type="datetime"/><br>
+	
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){						// 버튼 클릭시 처리할 함수
+			$('.page').toggle("show");						// class로 접근 방법 : .클래스명				
+		});													// toggle(속도) : 보였다가 보이지 않는 처리. 클릭하면 .page 내의 텍스트가 보였다, 사라졌다 한다.
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<button>토글링 처리</button>
+	<div class="page">
+		<h1>피곤하당</h1>
+		<p>개피곤하고 개졸려 빡친당. 으아아아아아</p>
+	</div>
+</body>
+</html>

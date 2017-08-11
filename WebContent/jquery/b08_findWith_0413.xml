@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<friends>
+	<friend>
+		<name>호날두</name>
+		<age>32</age>
+		<loc>포루투갈</loc>
+	</friend>
+	<friend>
+		<name>메시</name>
+		<age>30</age>
+		<loc>아르헨티나</loc>
+	</friend>
+	<friend>
+		<name>루니</name>
+		<age>32</age>
+		<loc>잉글랜드</loc>
+	</friend>		
+</friends>

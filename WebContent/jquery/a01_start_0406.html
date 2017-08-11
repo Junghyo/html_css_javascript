@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # jquery
+ 기능
+ - 문서 객체 모델과 관련된 처리를 쉽게 구현
+ - 일관된 이벤트 연결을 쉽게 구현
+ - 시각적 효과를 쉽게 구현
+ - AJAX 애플리케이션을 쉽게 개발
+ 
+ # jquery 시작
+ CDN(Content Delevery Network)
+ - 직접 network상 라이브러리 호출
+ - https://code.jquery.com/jquery-3.2.0.min.js
+ 
+ Local에서 사용
+ - 라이브러리 다운
+ - 로컬상 해당 위치 지정 설정
+ 
+ # 초기화면loading
+ $(document).ready(함수);
+ - 문서(document)가 준비되면 함수를 통해서 해당 javascript 코드 실행
+ - window.onload : 함수와 동일한 처리를 하고 있다.
+ - $ : jquery를 의미
+ 
+ $("선택자").css("속성","속성값");
+ - *(전체), #id명, .class명, tag명
+ ex) $("*").css("color","red");
+ 
+ $("선택자").attr("기본속성","기본속성값");
+ ex) <input name="name값", value="values값">
+*/
+	$(document).ready(function(){
+		$("*").css("color","tomato");
+		$("*").css("text-align","center");
+		$("*").css("background","#00cc00");
+		// 전체 document 객체의 글자색을 토마토색, 정렬 중앙, 배경색 변경
+		$("h5").css("color","blue");
+		// tag로 접근.
+		$("#id").css("color","red");
+		$("#id").css("font-size","100px");
+		// id로 접근
+		$(".class").css("color","purple");
+		// class로 접근
+		$(".class").on("mouseover",function(){
+			$(".class").css("visibility","hidden");
+		})
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>h1</h1>
+	<h1 id="id">h1 id</h1>
+	<h1 class="class">h1 class</h1>
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<h3>h3</h3>
+	<h4>h4</h4>
+	<h5>h5 tag 처리</h5>
+	<p>p</p>
+	<span>span</span>
+</body>
+</html>

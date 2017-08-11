@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+	$(document).ready(function(){
+		var curIdx=0;
+		// th tag의 해당 index에 대한 지정
+		var ths = document.querySelectorAll("th");
+		// th tag의 객체를 가져오는 처리. index 0~9
+		ths[curIdx].style.background="yellow";
+		// 첫번째 th 배경색 노랑으로 처리.
+		this.onkeydown=function(){
+			for(var idx=0; idx<ths.length; idx++){
+				ths[idx].style.background="";
+			}	
+			if(event.keyCode==39){
+				curIdx++;
+				ths[curIdx].style.background="yellow";
+			}
+			if(event.keyCode==37){
+				curIdx--;
+				ths[curIdx].style.background="yellow";
+			}
+		}
+
+	});
+*/
+	$(document).ready(function(){
+		var curIdx=0;
+		// th tag의 해당 index에 대한 지정
+		var ths = document.querySelectorAll("th");
+		// th tag의 객체를 가져오는 처리. index 0~9
+		ths[0].style.background="yellow";
+		// 첫번째 th 배경색 노랑으로 처리
+		var init=true;
+		// 초기화면인지 이벤트가 진행된 화면인지에 대한 흰색처리 부분
+		this.onkeydown=function(){
+			if(!init){
+			// 초기화면을 제외한 나머지 event(onkeydown)에서는
+			// 이전의 배경색상으로 초기화
+				for(var idx=0; idx<ths.length; idx++){
+					ths[idx].style.background="";
+				}
+			}	
+			if(event.keyCode==39){
+			// 오른쪽 화살표를 누를 경우 현재 index에서 +1칸의 배경색을 노랑 처리
+				ths[++curIdx].style.background="yellow";
+			}
+			if(event.keyCode==37){
+			// 왼쪽 화살표를 누를 경우 현재 index에서 -1칸의 배경색을 노랑 처리	
+				ths[--curIdx].style.background="yellow";
+			}
+			init=false;
+			// event가 시작되면 초기화면이 아니라는 표시로 init을 false로 지정처리
+		}
+
+	});
+
+/*
+ 과제 아래, 위로 key를 눌렀을때 배경색상 변경 
+ */
+</script>
+<style type="text/css">
+	th{border:1px solid black;}
+</style>
+</head>
+<body>
+	<table style="margin:auto; width:300px; height:500px; border-collapse:collapse;">
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+		</tr>
+		<tr>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+		</tr>
+		<tr>
+			<th>7</th>
+			<th>8</th>
+			<th>9</th>
+		</tr>
+		<tr>
+			<th>10</th>
+			<th>11</th>
+			<th>12</th>
+		</tr>
+		<tr>
+			<th>13</th>
+			<th>14</th>
+			<th>15</th>
+		</tr>													
+	</table>
+</body>
+</html>

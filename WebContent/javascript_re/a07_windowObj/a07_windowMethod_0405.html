@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ window 객체의 기본 메서드
+ var winName=window.open("", "", "");
+ winName.메서드명();
+ moveBy(x,y) : 상대적 위치이동
+ moveTo(x,y) : 절대적 위치이동
+ resizeBy(x,y) : 상대적 크기 지정
+ resizeTo(x,y) : 절대적 크기 지정
+ scrollBy(x,y) : 스크롤 위치 상대적 이동
+ scrollTo(x,y) : 스크롤 위치 절대적 이동
+ focus() : 촛점 맞춤
+ blur() : 촛점 제거
+ close() : 창 닫기
+ 
+ var win01 = window.open("","","width=200, height=200");
+ win01.moveTo(0,0)//왼쪽, 최상위
+ setInterval(function(){
+	 win01.moveBy(10,10);
+ },1000);
+*/
+	var win01 = window.open("","","width=200, height=200");
+	win01.moveTo(0,0)
+	// 왼쪽, 최상위
+	setInterval(function(){
+	// 1초마다 위치 왼쪽10, 아래로10씩 이동ㄴ	
+		 win01.moveBy(10,10);
+	},2);
+	setInterval(function(){
+		win01.moveBy(-10,-10);
+	},3)
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+/*
+ text-align : 글자의 상대적 정렬 처리
+ 	tag 내부에서 글자의 정렬처리(align:right, left, center)는 내장으로 지원되는 경우도 있지만 지원되지 않는 경우도 많다.
+ 	이럴 경우에 css로 문자열을 정렬시켜주는 기능을 말한다. ex) input의 문자열은 내장된 속성으로는 지원이 되지 않음
+		ex) 부서코드값은 중앙정렬, 사원명은 왼쪽정렬, 급여는 오른쪽 정렬된 input 내용을 처리하세요
+*/
+	.alignR{text-align:right;}
+	.alignC{text-align:center;}
+	.alignL{text-align:left;}
+	
+/*
+ text-decoration : href link에서 기본속성이 under line속성인데 이를 제거시 사용.
+ 	ex) 해당 문자열에 대한 line처리에 관련된 속성 처리
+ 		구글로 링크된 글자를 under line 없이 보일 수 있게 처리
+*/	
+	a{text-decoration:none;}
+	a:link::after{content:' - 'attr(href)}
+</style>
+</head>
+<body>
+	<table border>
+	<caption>등록하세요</caption>
+		<tr><th class="alignC">부서코드</th><th class="alignL">사원</th><th class="alignR">급여</th></tr>
+		<tr><th>부서코드: <input class="alignC" type="text" value="부서코드입력"></th>
+		<th>사원명: <input class="alignL" type="text" value="사원명입력"></th>
+		<th>급여: <input class="alignR" type="number" value="급여단위입력">만원</th></tr>
+	</table>
+	<br><br>
+	<a href="http://www.google.com">구글로 이동</a>
+<!-- 
+ 확인예제(homework)
+ 아래와 같은 화면을 list형태로 구현하세요.
+ 	사원 정보 list(테이블 list) : 데이터 홀/짝 배경색상 처리, 마우스커서시 -- 글자 굵기, 크기, 배경색 변경
+ 사원번호		사원명	  연봉			주업무홈피(link)
+ 7709		홍길동	  3,000만원		구글-http://www.google.com						
+ 7710		김길동	  4,000만원		네이버-http://www.naver.com					
+ 7711		신길동	  5,000만원		다음-http://www.daum.net						
+ 중앙		왼쪽		  오른쪽			왼쪽 line 없이 처리					
+
+-->	
+	<table>
+		<tr><th>사원번호</th><th>사원명</th><th>연봉</th><th>주업무홈피(link)</th></tr>
+		<tr><th>7709</th><th>홍길동</th><th>3,000만원</th><th>주업무홈피(link)</th></tr>
+		<tr><th>7710</th><th>김길동</th><th>4,000만원</th><th>주업무홈피(link)</th></tr>
+		<tr><th>7711</th><th>신길동</th><th>5,000만원</th><th>주업무홈피(link)</th></tr>
+	</table>
+</body>
+</html>

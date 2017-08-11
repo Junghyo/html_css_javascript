@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var bgColorGDive;
+	var topPos=20;
+	var leftPos=20;
+	//화면이 로딩될 때, 전역변수 처리
+	window.onload=function(){
+		bgColorGDiv = document.getElementsByClassName("bgcG")[0];
+	}
+	function go(chIdx){
+		if(chIdx==0) bgColorGDiv.style.top=(topPos-=10)+"px";
+		if(chIdx==1) bgColorGDiv.style.left=(leftPos+=10)+"px";
+		if(chIdx==2) bgColorGDiv.style.top=(topPos+=10)+"px";
+		if(chIdx==3) bgColorGDiv.style.left=(leftPos-=10)+"px";
+	}
+
+</script>
+<style type="text/css">
+/*
+ 위치 속성
+ 절대 좌표 : 요소의 x, y좌표를 통해서 화면의 해당 위치에 나타냄
+ 상대 좌표 : 요소를 입력한 순서를 통해 상대적으로 위치를 나타냄
+
+ 1. position : 절대위치냐 상대 위치냐에 대한 속성을 지정처리
+ 	 1) relative : default값
+ 	 2) absolute : 절대위치 설정
+ 		ex) 크기가 x축 100px, y축 100px인 div 3개를 만들고 배경색상을 red, green, blue로 설정
+*/
+	div{width:100px; height:100px; position:absolute;}
+	.bgcR{background-color:red; top:10px; left:10px;}
+	.bgcG{background-color:green; top:20px; left:20px;}
+	.bgcB{background-color:blue; top:30px; left:30px;}
+	
+/*
+ 2. top : y좌표, left : x좌표	 -- position이 절대위치로 설정되어 있을 때 왼쪽 상단을 꼭지점으로 기준 위치를 설정	
+ 	.클래스명{position:absolute; top:100px; left:200px;}
+*/
+	.bgcR{background-color:red; top:10px; left:10px;}
+	.bgcG{background-color:green; top:20px; left:20px;}
+	.bgcB{background-color:blue; top:30px; left:30px;}
+
+/*
+ 3. z-index
+ 	 위치가 겹쳐졌을 때 우선적으로 화면에 나타내는 것을 말한다.
+ 	 z-index값이 많을 수록 나타나는 것이 더 먼저 보인다.
+*/
+	.bgcR{background-color:red; top:10px; left:10px; z-index:50;}
+	.bgcG{background-color:green; top:20px; left:20px; z-index:40;}
+	.bgcB{background-color:blue; top:30px; left:30px; z-index:30;}
+	
+	td{width:33%; height:33%; text-align:center; background:yellow;}
+</style>
+
+</head>
+<body>
+	<div class="bgcR">빨강색 Div</div>
+	<div class="bgcG">초록색 Div</div>
+	<div class="bgcB">파랑색 Div</div>
+	<br><br>
+	
+	<table align="center" width="200pt" height="200pt" border>
+		<tr><td></td><td onclick="go(0)">위로</td><td></td></tr>
+		<tr><td onclick="go(3)">왼쪽</td><td></td><td onclick="go(1)">오른쪽</td></tr>
+		<tr><td></td><td onclick="go(2)">아래로</td><td></td></tr>
+	</table>
+	
+<!-- 
+	과제(homework)
+	팀명 		색상			이동
+    text		select		클릭(button)
+    
+         1		2		3		4		5
+  A팀                                                         --- 위에서 팀명하고 색깔 정하면 팀명하고 색깔 매치 (div)
+  B팀	
+
+-->	
+
+</body>
+</html>

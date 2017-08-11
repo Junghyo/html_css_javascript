@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+//		초기 h1 tag만 이벤트가 발생
+//		append()나 html()로 추가되는 tag에 대해서는 event 발생하지 않음
+		$("h1").on("click",function(){
+			var len=$("h1").length;
+			$("#wrap").append("<h1>길이: "+len+"피유유유유유유</h1>");
+		})
+//		$(객체).on(이벤트, 추가될내용포함tag, 처리할 함수)		
+		$("#wrap2").on("click", "p", function(){
+			var len=$("h2").length;
+			$("#wrap2").append("<h2>길이: "+len+"띠이용</h2>");
+		})
+	});
+/* jquery 1.9버젼 이전
+ $(객체).bind(현재 존재 객체만..);			
+ $(객체).delegate(현재+미래 존재객체만..);	.delegate()는 이벤트 설정을 부모에 대해 한다. 이런 방식을 이벤트 대리자라고 명명한다.
+ $(객체).live("현재/미래 존재객체만"); 		.live()는 이벤트의 설정 대상이 document가 된다
+*/
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<div id="wrap">
+		<h1>h1 tag 너무 졸령!</h1>
+	</div>
+	<div id="wrap2">
+		<p>h2 tag 부엉부엉</p>
+	</div>	
+</body>
+</html>

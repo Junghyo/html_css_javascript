@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+# JSON 데이터
+1) 자바스크립트 객체에 대한 선언(언급)
+   - var person = {};			--> 단일 객체선언
+	- person.name = "호날두";		--> 속성, 값 
+	- person.age = 32;			--> 속성, 값
+	 
+2) 객체 선언과 속성/속성값 할당
+	- var product ={pname:"딸기", prcie:2500};
+	- json 데이터를 문자열로 전송한다.
+	- var sendJsonText="{pname:\"사과\", price:2500}";
+	- var jsonObj=$.parseJSON(sendJsonText);
+*/
+
+	$(document).ready(function(){
+		var person={};
+		person.name = "호날두";
+		person.age = 25;
+		$("td").eq(0).html(person.name);
+		$("td").eq(1).html(person.age);
+		
+		/* product 객체를 선언하고 속성값: 물건명, 가격을 선언 화면에 출력처리 */
+		var product={name:"딸기",price:2500};
+		$("td").eq(2).html(product.name);
+		$("td").eq(3).html(product.price);
+		
+		/* 문자열 json 데이터 선언과 $.pasrseJSON을 통한 변경 및 객체화된 내용 처리. */
+		var sendJson = "{\"title\":\"해리포터\", \"cnt\":\"5\"}";
+		var jsonObj = $.parseJSON(sendJson);
+		$("h1").html(jsonObj.title+"를 "+jsonObj.cnt+"명과 함께 관람함.");
+		
+	});
+
+
+
+
+</script>
+<style type="text/css">
+	table{width:400px; margin:auto; border-collapse:collapse;}
+	td{border:1px solid black; width:200px;}
+</style>
+
+</head>
+<body>
+	<table>
+		<tr><td></td><td></td><td></td><td></td></tr>
+	</table>
+	<h1></h1>
+
+</body>
+</html>

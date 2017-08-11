@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+
+<style type="text/css">
+/*
+ css에서 변수를 활용해서 사용하기
+ 	
+ 	증가하는 변수 쓰기 : selector별로 특정 변수를 활용하여 화면에서 numbering을 처리하는 경우
+ 		count-increment : numbering을 처리하는 내용.
+ 		selector{count-increment:변수지정;}
+ 		
+ 	특정화 화면에 보기에 처리하려면
+ 		selector::before  --  해당 selector가 화면상에 나오기 시작하는 직전에 처리된다.
+ 		selector::before{content:counter(지정된변수)"추가할문자열";}
+ 		content -- 해당내용 즉, <p>해당내용</p>. 결국 해당내용이라는 문자열이 나오기 직전에
+ 				    지정된 변수가 추가할 문자열과 함께 혼합되어서 처리된다.	
+ 
+ ex) 목차가 나오고 하단 부분에 문단을 numbering하여 처리되게 하세요.				    
+ */
+ 	p{counter-increment:number01;}  /* p에 변수선언 */
+ 	p::before{content:counter(number01)"."}
+ 	p:first-letter{font-size:2em;}
+ 
+ /*
+ 	::after -- 마지막 부분에 덧붙여서 처리할 내용
+ 	
+ 	attr(tag에서 정의된 속성) : tag 자체에 사용자 정의로 지정한 속성을 활용
+ 	<태그 속성="속성값">
+ 	
+ ex) p tag 자체에 data-page라는 속성값을 지정하고 attr을 사용해 지정된 속성값의 내용을 p tag가 끝날 때 덧붙여서 처리.	
+ */	
+ 	p::after{content: "-" attr(data-page) "page";}
+ 	
+ /*
+ 반응 문자 선택자 처리
+ 	사용자가 문자와 반응해서 생긱는 영역을 선택하는 선택자를 말한다.
+ 	::selection{속성:속성값;}
+ 	
+ 	p tag 부분에서 마우스로 선택했을 때, 해당 내용에 대하여 선택 css 처리하자.
+ 	배경색은 노랑색, 글자색은 파랑색
+ */	
+ 	p::selection{background-color:yellow; color:blue;}
+ 	
+</style>
+</head>
+<body>
+	<h1>기게학습이란?</h1>
+	<p data-page="52">기계 학습(機械學習) 또는 머신 러닝(영어: machine learning)은 인공 지능의 한 분야로, 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야를 말한다.</p>
+	<p data-page="62">가령, 기계 학습을 통해서 수신한 이메일이 스팸인지 아닌지를 구분할 수 있도록 훈련할 수 있다.</p>
+</body>
+</html>

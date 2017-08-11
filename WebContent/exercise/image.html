@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+	.a{background-image:url('img03.png')}                /* 같은 폴더에 있는 이미지*/
+	.b{background-image:url('/clientPrj/img/img01.jpg')}
+	.c{background-image:url('../img06.jpg')}    /* 상위 폴더에 있는 이미지 */
+	.d{background-image:url('http://localhost:8080/clientPrj/img/img05.jpg')} /*로컬 지정 이미지*/
+	.e{background-image:url('/clientPrj/css2/innerImg/img01.png')} /*최 상위 폴더(ClientPrj)로부터의 경로통해서 이미지*/
+	.f{background-image:url('../img/img05.jpg')} /* 상위 폴더(WebContent)안에 있는 폴더(img)내의 이미지*/
+	.g{background-image:url('img1/img04.jpg')}  /* 같은 폴더(exercise)안에 있는 폴더(img)내의 이미지 */
+	.h{background-image:url('http://i.huffpost.com/gen/4127522/thumbs/o-THE-570.jpg?7')}  /* 웹사이트 이미지 */
+	.i{background-image:url('C:\Users\Public\Pictures\Sample Pictures/img07.jpg');}  /* c드라이브 경로 이미지 안됨ㅜㅜ */
+</style>
+
+</head>
+<body>
+<table class="a" width="500" height="500"></table>
+<table class="b" width="500" height="500"></table>
+<table class="c" width="500" height="500"></table>
+<table class="d" width="500" height="500"></table>
+<table class="e" width="500" height="500"></table>
+<table class="f" width="500" height="500"></table>
+<table class="g" width="500" height="500"></table>
+<table class="h" width="500" height="500"></table>
+<table class="i" width="500" height="500"></table>
+
+</body>
+</html>

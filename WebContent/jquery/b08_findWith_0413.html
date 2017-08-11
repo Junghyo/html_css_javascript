@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # xml과 find()
+ 1) xml(Extensible Markedup Language)
+ 	- 최상위구조. 계층구조의 tag값과 각 tag의 속성값으로 구성
+ 	- ex) <products>
+ 				<product id="prod">사과</product>
+ 				<product id="prod">바나나</product>
+ 				<product id="prod">배</product>
+ 		  </products>
+ 	- 위와 같은 xml 데이터 형식을 $.parseXML(xmldata)를 통해 객체단위로 변수 설정이 가능하다.
+ 	- 객체.find("찾고자 하는 xml 계층구조 하위 객체")
+*/
+var xml="";
+xml +="<friends>";
+xml +=   "<friend>";
+xml +=      "<name>호날두</name>";
+xml +=      "<age>32</age>";
+xml +=      "<loc>포루투갈</loc>";
+xml +=   "</friend>";
+xml +=   "<friend>";
+xml +=      "<name>메시</name>";
+xml +=      "<age>30</age>";
+xml +=      "<loc>아르헨티나</loc>";
+xml +=   "</friend>";
+xml +=   "<friend>";
+xml +=      "<name>루니</name>";
+xml +=      "<age>32</age>";
+xml +=      "<loc>잉글랜드</loc>";
+xml +=   "</friend>";   
+xml +="</friends>";
+
+var json= "[{\"name\": \"홍길동\", \"age\": \"12\", \"loc\": \"강남\"}, {\"name\": \"홍길동\", \"age\": \"12\", \"loc\": \"강남\"}]";
+
+	$(document).ready(function() {
+	    // XML 문자데이터 ==> 객체데이터 변환 $.parseXML("문자열")
+	    // JSON 문자데이터 ==> 객체데이터 변화 $.parseJSON("문자열")
+	    var xmlObj = $.parseXML(xml);
+	    // $("객체").find("해당계층구조이름");
+	    console.log("friend객체의 갯수 : "+$(xmlObj).find("friend").length);
+	    $(xmlObj).find("friend").each( function(index){
+	    	console.log( $(this).find("name").text()+":"+$(this).find("age").text() ); 
+	    	var show="";
+	    	show+="<div style='background:pink;'>";
+	    	show+="<h1>"+$(this).find("name").text()+"</h1>";
+	    	show+="<p>"+$(this).find("age").text()+$(this).find("loc").text()+"</p>";
+	    	show+="</div>";
+	    	document.body.innerHTML+=show;
+	    });
+	    var jsonObj = $.parseJSON(json);
+	    $(jsonObj).each(function(index,item){
+	    	var show="";
+	    	show+="<div style='background:skyblue;'>";
+	    	show+="<h1>"+item.name+"</h1>";
+	    	show+="<p>"+item.age+item.loc+"</p>";
+	    	show+="</div>";
+	    	document.body.innerHTML+=show;
+	    });
+	    $("div").css({float:"left", border:"1px solid red", "border-radius":"30px", textAlign:"center" });
+	});
+/*
+ 숙제
+ 현재 타격 list(xml)
+ - rank, 팀명, 선수이름, 타율, 홈런 (3명)
+ - xml 문자열로 데이터를 만들고
+ 
+ 방어율 list(json)
+ -rank, 팀명, 선수이름, 방어율, 피안타율(3명)
+ -json 문자열로 데이터 만들고
+*/	
+
+
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

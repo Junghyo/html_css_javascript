@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 
+ 위치에 관련된 선택자를 말하면 크게 3가지 정도가 있다
+ 요소 : odd ->  홀수 번쨰 위치한 문서 객체 선택
+ 요소 : even -> 짝수번째 위치한 문서 객체 선택
+ 요소 : first -> 첫번째 위치한 문서 객체를 선택
+ 요소 : last -> 마지막 위치한 문서 객체를 선택
+ 주로 list 형식 : tr, td, h1, h2, li......
+ 
+ #jquery와 css의 초기 처리 구분 기준
+ jquery를 이용하면 DB와 연결해서 특정 조건이나 데이터와 함께 css내용을 처리할 수 있다.(보안, 권한)
+ 따라서 css를 처리할 때는 jquery 모듈을 이용한다.
+ 
+*/
+	$(document).ready(function(){
+			$("table").css("margin","auto");
+			$("tr:even").css("background","#cccccc");
+			// 짝수 list 처리
+			$("tr:odd").css("background","#99cc33");
+			// 홀수 list 처리
+			$("tr:first").css({border:"3px solid red", background:"blue"});
+	});
+	document.write("<table>");
+    for (var a=0; a<10; a++) {
+        document.write("<tr>");
+        for(var b=0; b<10; b++) {
+            document.write("<td>"+"</td>");
+    }
+    document.write("</tr>");
+    }document.write("</table>");
+
+</script>
+<style type="text/css">
+	table{border-collapse:collapse; border: 1px solid black; width:500px; height:500px;}
+	td{border: 1px solid black; width:10%;}
+</style>
+
+</head>
+<body>
+	
+</body>
+</html>

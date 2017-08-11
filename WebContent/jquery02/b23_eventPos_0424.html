@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 이벤트 객체 속성
+ 1) event.pageX : 브라우저 단위 마우스의 x좌표
+ 2) event.pageY : 브라우저 단위 마우스의 y좌표
+ $(객체).offset():객체의 위치값을 가져옴
+ 
+
+*/
+	$(document).ready(function(){
+		$("#myCanvas").on("mouseover", function(event){
+//				이벤트 객체를 가져와서 속성값 확인하기.
+//				alert(event.pageX+" : "+event.pageY);
+				$("input[name=xPos]").val(event.pageX);
+				$("input[name=yPos]").val(event.pageY);
+				var pos=$(this).offset();
+//				canvas의 왼쪽 상단의 꼭지점 표시.				
+				$("input[name=xPos2]").val(pos.left);
+				$("input[name=yPos2]").val(pos.top);
+				$("#imgDiv").css("left",event.pageX+"px");
+				$("#imgDiv").css("top",event.pageY+"px");
+		})
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	x : <input type="text" name="xPos">
+	y : <input type="text" name="yPos">
+	<canvas id="myCanvas" width="600" height="400" style="border:1px solid black;"></canvas><br>
+	x : <input type="text" name="xPos2"><br>
+	y : <input type="text" name="yPos2">
+	<div id="imgDiv" style="position:absolute; left:100px; top:100px;"><img src="../img/04.jpg" width="50" height="50"/></div>
+</body>
+</html>

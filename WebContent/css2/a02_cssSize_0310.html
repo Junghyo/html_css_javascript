@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+/*
+ 폰트 상대크기 설정 예제
+ :nth-child(순서-1, 2, 3) --해당 순서별로 직접적으로 접근해서 처리할 수 있는 selector
+ 	ex) p tag가 여러개 있다. 그 중에서 2번째를 선택하여 특별하게 css를 설정하려고 한다.
+ 			p:nth-child(순서)
+ */	
+		p:nth-child(1){color:yellow;} 				    			/* 기본값 */
+		p:nth-child(2){font-size:100%; color:green;} 				/* 100% 상대크기설정 */
+		p:nth-child(3){font-size:150%; color:blue;}
+		p:nth-child(4){font-size:200%; color:red;}
+
+</style>
+
+</head>
+<body>
+
+	<p>font-size : 기본</p>
+	<p>font-size : 100%</p>
+	<p>font-size : 150%</p>
+	<p>font-size : 200%</p>
+</body>
+</html>

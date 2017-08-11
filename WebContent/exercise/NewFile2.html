@@ -1,0 +1,152 @@
+<HTML> 
+<HEAD> 
+<title>Searching for text: JavaScript</title> 
+</HEAD> 
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099" 
+onLoad="if(top.changeAD)top.changeAD()"> 
+<a name="top"></a> 
+
+<h3><font face="Verdana,Arial,Helvetica,sans-serif" color="#000099"> 
+Searching for text 
+</font></h3> 
+
+<script language="JavaScript"> 
+<!-- 
+if ( 
+    parent.location==self.location 
+    && (""+self.location).toLowerCase().indexOf(".chm")==-1 
+    && (""+self.location).toLowerCase().indexOf("~hh")==-1 
+  ) 
+ document.writeln ('<small><a href="index.htm"><img border=0 alt="Table of Contents" width=17 height=15 src="../hi-icons/82.gif">Table of Contents</a></small>'); 
+//--> 
+</script> 
+
+<p> 
+<b>Question:</b> How do I search for a particular text string on the page? 
+
+<p> 
+<b>Answer:</b> 
+In Netscape Navigator 4.x, to search for a string use the 
+<nobr><code><font face="Courier New,Courier">window.find(<i>string</i>)</font></code></nobr> 
+method; see also <a href="find_dia.htm">Find Dialog</a>. 
+In Internet Explorer 4.x and newer, create a <i>text range</i> object 
+(<code><font face="Courier New,Courier">TRange</font></code> in the example below) 
+and use the method 
+<nobr><code><font face="Courier New,Courier">TRange.findText(<i>string</i>)</font></code></nobr>. 
+
+<p> 
+<i>Example:</i> The following script gets a text string from the user 
+and then finds and highlights this string on the page. 
+
+<form name="f1" action="" 
+onSubmit="if(this.t1.value!=null && this.t1.value!='') 
+findString(this.t1.value);return false" 
+> 
+<input type="text" name=t1 value="text" size=20> 
+<input type="submit" name=b1 value="Find"> 
+</form> 
+
+<script language="JavaScript"> 
+<!-- 
+var TRange=null 
+
+function findString (str) { 
+ if (parseInt(navigator.appVersion)<4) return; 
+ var strFound; 
+ if (navigator.appName=="Netscape") { 
+
+  // NAVIGATOR-SPECIFIC CODE 
+
+  strFound=self.find(str); 
+  if (!strFound) { 
+  strFound=self.find(str,0,1) 
+  while (self.find(str,0,1)) continue 
+  } 
+ } 
+ if (navigator.appName.indexOf("Microsoft")!=-1) { 
+
+  // EXPLORER-SPECIFIC CODE 
+
+  if (TRange!=null) { 
+  TRange.collapse(false) 
+  strFound=TRange.findText(str) 
+  if (strFound) TRange.select() 
+  } 
+  if (TRange==null || strFound==0) { 
+  TRange=self.document.body.createTextRange() 
+  strFound=TRange.findText(str) 
+  if (strFound) TRange.select() 
+  } 
+ } 
+ if (!strFound) alert ("String '"+str+"' not found!") 
+} 
+//--> 
+</script> 
+
+This example has been created using the following code: 
+
+<pre><font face="Courier New,Courier" 
+>&lt;form name="f1" action="" 
+onSubmit="if(this.t1.value!=null && this.t1.value!='') 
+findString(this.t1.value);return false" 
+&gt; 
+&lt;input type="text" name=t1 value="" size=20&gt; 
+&lt;input type="submit" name=b1 value="Find"&gt; 
+&lt;/form&gt; 
+
+&lt;script language="JavaScript"&gt; 
+&lt;!-- 
+var TRange=null 
+
+function findString (str) { 
+ if (parseInt(navigator.appVersion)&lt;4) return; 
+ var strFound; 
+ if (navigator.appName=="Netscape") { 
+
+  // NAVIGATOR-SPECIFIC CODE 
+
+  strFound=self.find(str); 
+  if (!strFound) { 
+  strFound=self.find(str,0,1) 
+  while (self.find(str,0,1)) continue 
+  } 
+ } 
+ if (navigator.appName.indexOf("Microsoft")!=-1) { 
+
+  // EXPLORER-SPECIFIC CODE 
+
+  if (TRange!=null) { 
+  TRange.collapse(false) 
+  strFound=TRange.findText(str) 
+  if (strFound) TRange.select() 
+  } 
+  if (TRange==null || strFound==0) { 
+  TRange=self.document.body.createTextRange() 
+  strFound=TRange.findText(str) 
+  if (strFound) TRange.select() 
+  } 
+ } 
+ if (!strFound) alert ("String '"+str+"' not found!") 
+} 
+//--&gt; 
+&lt;/script&gt; 
+
+</font></pre> 
+
+
+
+<p> 
+<small><a href="javascript:history.back()" 
+><img border=0 src="../hi-icons/shortcut.gif" alt="Back">Back</a></small> 
+
+<!--Page content ends here; don't delete this comment.--> 
+
+<p> 
+<font size=2 face="Arial,Helvetica,sans-serif"> 
+<A target=_top HREF="http://www.javascripter.net">JavaScripter.net</a>. 
+<A HREF="legal.htm">Copyright</A> 
+&#169; 1999-2006, Alexei Kourbatov 
+</font> 
+
+</BODY> 
+</HTML>

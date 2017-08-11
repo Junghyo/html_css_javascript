@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 문서객체 속성 처리
+ attr() : html의 기본속성값을 등록, 수정처리
+ - 속성값 가져오기 : $(객체).attr("src");
+ ex) <img src="Desert.jpg"/>
+	 $("img").attr("src");
+
+ - 속성값 지정하기
+ $("객체").attr("속성","속성값");
+ $("img").attr("src","img07.jpg");
+ $("배열객체").attr("속성", fucntion(index){
+	 return "여러속성값지정";
+ });
+
+ ex) img0.jpg, img1.jpg, img2.jpg
+ $("img").attr("src", fucntion(index){
+	 return "img"+index+"jpg";
+ });
+
+ - removeAttr(속성) : 문서객체 속성 제거
+ $("객체").removeAttr("속성");
+ ex) <h1 data-index="0">안녕하세요</h1>
+ $("h1").removeAttr("data-index");
+*/	
+	$(document).ready(function(){
+		// 객체의 속성 가져오기. $(객체).attr("속성명")
+		var file=$("img").attr("src");
+		$("h1").html(file);
+	});
+	
+	function chImg(obj){
+	// javascript 객체 -> jquery $(자바스크립트객체)	
+		$(obj).css("background", "pink");
+		$(obj).html("이미지 변경");
+		$("img").attr("src","../img/04.jpg")
+	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1 onclick="javascript:chImg(this);"></h1>
+	<img src="../img/01.jpg" width="300" height="300" >
+</body>
+</html>
+

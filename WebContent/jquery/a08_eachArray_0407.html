@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 배열객체관리
+ for, for(in)
+
+ jquery에는 배열을 손쉽게 관리하기 위하여 .each()메서드를 사용한다.
+ $.each(배열객체, function(index, item)){
+	index활용, 배열 안에 있는 단위를 item으로 활용 
+ };
+ 
+ $(배열객체).each(function(index, item){
+	 
+ });
+	var people=[{name:"짱짱걸", age:25, job:"wonderwoman"}, 
+	    {name:"짱짱맨", age:27, job:"superman"},
+	    {name:"피카츄", age:2, job:"애완동물"},
+	    {name:"박용택", age:36, job:"에이스"}];
+	item ---> {name:"짱짱걸", age:25, job:"wonderwoman"} 
+ 
+*/
+	$(document).ready(function(){
+		$("table").css({border:"1px solid black", "border-collapse:"collapse", width:"600px", height:"800px;"});
+		$("th").css({border:"1px solid black", width:"33.333333%"})
+		var personList=[{name:"짱짱걸", age:25, job:"wonderwoman"},
+		    {name:"짱짱맨", age:27, job:"superman"},
+		    {name:"피카츄", age:2, job:"애완동물"},
+		    {name:"박용택", age:36, job:"에이스"}]; // json
+		$.each(personList, function(index, item){
+		// $.each(배열객체, function(index, item){처리할 내용});
+		alert(index+" : "+item.name+" : "+item.age);
+		// 전부 alert처리
+		if(index==0){
+		// 첫번째
+			alert(index+" : "+item.name+" : "+item.age);
+		}
+		if(index==(personList.length-1)){
+		// 마지막	
+			alert(index+" : "+item.name+" : "+item.age);
+		}
+		$("tr").eq(index).html("<th>"+item.name+"</th>"+"<th>"+item.age+"</th>"+"<th>"+item.job+"</th>");
+		});
+	});
+	
+</script>
+<style type="text/css">
+
+</style>
+	
+</head>
+<body>
+	<table>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>						
+	</table>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/* # 문서 객체 삽입
+1)
+$(객체).html("입력할 문자열");
+$(객체).text("입력할 문자열"); 	-- html(X)문자열
+ex)
+$("h1").html("안녕하세요");
+$("h2").text("안녕하세요");
+
+2) 기존문자열이나 html에서 추가처리
+<h1>즐거운 점심 하셨나</h1>
+h1뒤에 글자를 추가할 경우
+$("h1").html( $("h1").html()+"추가할부분" );
+$("h1").append("기존 문자열 뒤에 추가할 부분");
+$("h1").prepend(앞에 추가할 부분);
+*/
+
+	$(document).ready(function(){
+
+	});
+	function call(){
+		if($("h3").html()=="h3 tag입니다."){
+			$("h3").html("변경된 h3 tag입니다.");
+		}else{
+			$("h3").html("h3 tag입니다.");
+		}
+//		html("html 코드 적용")
+		$("h1").html("<font color='blue'>변경된 h1 tag입니다.</font>");
+//		text("html 코드내용을 문자열로 인식", 내용을 그대로 보이고자 할 경우)		
+		$("h2").text("<font color='blue'>변경된 h2 tag입니다.</font>");
+//		append: 뒤에 추가, prepend: 앞에 추가
+		$("h1").append("\t뒤에 문자열을 추가하려면 append");
+		$("h1").prepend("앞에 문자열을 추가하려면 prepend\t");
+	}
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<button onclick="javascript:call()">클릭</button>
+	<h1>h1 tag입니다.</h1>
+	<h2>h2 tag입니다.</h2>
+	<h3>h3 tag입니다.</h3>
+	<h4>h4 tag입니다.</h4>
+</body>
+</html>

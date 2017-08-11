@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+ # 객체 배열
+ 1) 기본 객체 선언
+ function Emp(empno, position, sal){
+	this.empno=empno;
+	this.ename=ename;
+	this.sal=sal;
+}
+ 2) 객체 배열
+ var empList=[];
+ empList[0] = new Emp(1000,"좌완에이스",3000);
+ empList[1] = new Emp(1001,"4번타자",3500);
+ for(idx=0; idx<empList.length; idx++){
+	 console.log(empList[idx].empno+"의 포지션은 "
+			 	+empList[idx].position+"이고 연봉은 "
+			 	+empList[idx].sal+"만원 이다.");
+ }
+ */
+ 	function Emp(number, position, sal){
+		this.number=number;
+		this.position=position;
+		this.sal=sal;
+	}; 	
+ 	var empList=[];
+ 	empList[0] = new Emp(7,"좌완에이스",3000);
+ 	empList[1] = new Emp(4,"4번타자",3500);
+ 	for(idx=0; idx<empList.length; idx++){
+	 	console.log("등번호 "+empList[idx].number+"번의 포지션은 "
+			 		+empList[idx].position+"이고 연봉은 "
+			 		+empList[idx].sal+"만원이다.");
+ };
+ 	for(idx in empList){
+ 		console.info(empList[idx]);
+ 	}
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

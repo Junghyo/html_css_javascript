@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/* 
+ $ : jquery 라는 약자
+ $(document) : jquery에서 document 객체(body)를 쓰겠습니다.
+ $(documnet).ready() : jquery에서 화면이 로딩된 후에 처리할 내용을 선언하겠습니다.
+*/ 
+
+// $(document).ready(함수) : 로딩한 후에 처리할 함수를 지정하겠습니다.
+	$(document).ready(function(){
+// 화면을 body끝까지 인식한 후에 처리할 내용 선언
+// h1객체의 속성을 css로 글자 색상을 파랑으로 처리하겠습니다.
+		$("h1").css("color","blue");
+	});
+
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>$("h1").css("color","blue"); h1글자색 파랑으로 변경</h1>
+</body>
+</html>

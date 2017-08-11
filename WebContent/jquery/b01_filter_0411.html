@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 기본 filter 처리 메서드
+ filter()
+ - 문서 객체를 필터링한다.
+ - $(selector).filter(selector);	-- 해당 객체 검색
+ - $(selector).filter(function(){
+	 해당 객체를 검색했을 때 처리할 기능 list
+ }); 
+*/
+	$(document).ready(function(){
+		$("h1:even").css({color:"orange", background:"blue"});
+		// 짝수
+		$("h1").filter(":odd").css({color:"maroon", background:"tomato"});
+		// 홀수 $("객체").filter(selector)
+		$("h1").filter( function(index){
+			return index%3==0;
+			// 3개 단위의 데이터만 가져옴
+		}).css({background:"grey",color:"yellow"}).html("text 변경");
+		// $("객체").filter(function(index){ 함수처리 });		-- index는 객체h1에 대한 순차별 index 값을 의미
+	});
+	
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>h1 tag : 개 졸립다 빡친다</h1>
+	<h1>h1 tag : 개 졸립다 빡친다</h1>
+	<h1>h1 tag : 개 졸립다 빡친다</h1>
+	<h1>h1 tag : 개 졸립다 빡친다</h1>
+	<h1>h1 tag : 개 졸립다 빡친다</h1>
+	<h1>h1 tag : 개 졸립다 빡친다</h1>
+</body>
+</html>

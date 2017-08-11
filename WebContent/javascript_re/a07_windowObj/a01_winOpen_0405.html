@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+윈도우창 생성  
+- 브라우저에서 새로운 화면의 창이 나타나는 것을 말한다.(팝업)
+
+생성 형식 : window.open("속성1","속성2","속성3");
+	- 속성 1 : 외부url, 내부자원(.jsp, .html, ....)
+	- 속성 2 : window의 이름 지정
+	- 속성 3 : height(window창의 높이), width(window창의 넓이), location(주소입력여부-yes/no),
+			  menubar(메뉴의 유무-yes/no), resizable(화면 크기조절 기능 여부), status(상태표시줄의 여부),
+			  toolbar(툴바 여부)
+
+화면에 기본적으로 script를 통해서 출력할 부분이 필요할 때
+var winname(윈도우창이름) = window.open("","","width=300, height=200");
+winname(윈도우창이름).document.write("<h1>화면로딩</h1>");
+*/
+
+// window.open( "url/file명", "이름", "옵션(옵션1=옵션1값,...)" )
+	function openwin(){
+	window.open("http://www.naver.com","win01", "width=600, height=600");
+	};
+	function openwin2(){
+		var winname = window.open("", "", "width=500, height=300");
+		// 사용자 정의로 화면이 나타나는 창 열기(script)
+		winname.document.write("<h1 align='center'>창문이 열린다.</h1><input type='text'>");
+		// 윈도우이름.document.... 화면을 script로 나타낸다.
+	};
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1 onclick="javascript:openwin()">네이버 팝업창 띄우기</h1>
+	<h1 onclick="javascript:openwin2()">내부에 창 띄우기</h1>
+</body>
+</html>

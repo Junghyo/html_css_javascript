@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+/*
+ 일반적인 link는 초기 글자색이 파랑색. 언더라인 처리. 클릭하여 페이지가 이동된 후에는 보라색으로 변경된다.
+ 
+ text-decoration : 문자에 대한 옵션을 처리한다.(언더라인 처리)
+*/
+	a{text-decoration:none;}
+
+/* 이동된 후 글자색은 보라색으로 변경 ==> 노랑색으로 처리
+	:visited  -- 이동한 후의 글자 색상 지정
+	
+	:link  --  link된 상황에서 처리할 내용
+*/
+	a:visited{color:pink;}	
+	a:link::after{content:' - 'attr(href)}
+</style>
+</head>
+<body>
+	<h1>페이지 이동!!!gogo!!</h1>
+	<h2><a href="http://www.naver.com">네이버로 이동</a></h2>
+	<h2><a href="http://www.daum.net">다음으로 이동</a></h2>
+	<h2><a href="http://www.google.com">구글로 이동</a></h2>
+	<h2><a href="http://localhost:8080/clientPrj/css/a16_letterSelector_0309.html">a16실습파일로 이동</a></h2>
+	
+<!-- 
+	과제(homework)
+	href속성을 문자열 다음에 '-'와 함께 화면에 출력되도록 하자.
+	attr(속성)
+-->	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var bgrG;
+	var topPos=20;
+	var leftPos=20;
+	window.onload=function(){
+		bgrG = document.getElementsByClassName("green")[0];
+	}
+	function go(chIdx){
+		if(chIdx==0) bgrG.style.top=(topPos-=10)+"px";
+		if(chIdx==1) bgrG.style.top=(topPos+=10)+"px";
+		if(chIdx==2) bgrG.style.left=(leftPos-=10)+"px";
+		if(chIdx==3) bgrG.style.left=(leftPos+=10)+"px";
+	}
+</script>
+<style type="text/css">
+	div{height:100px; width:100px; position:absolute;}
+	.red{background:red; top:10px; left:10px; z-index:50;}
+	.green{background:green; top:20px; left:20px; z-index:40;}
+	.blue{background:blue; top:30px; left:30px; z-index:30;}
+	th{height:33%; width:33%; background:yellow;}
+</style>
+	
+</head>
+<body>
+	<div class="red">빨강</div>
+	<div class="green">초록</div>
+	<div class="blue">파랑</div>
+	<table align="center" height="200px" width="200px" border>
+		<tr><th></th><th onclick="go(0)">위로</th><th></th></tr>
+		<tr><th onclick="go(2)">왼쪽으로</th><th></th><th onclick="go(3)">오른쪽으로</th></tr>
+		<tr><th></th><th onclick="go(1)">아래로</th><th></th></tr>
+	</table>
+</body>
+</html>

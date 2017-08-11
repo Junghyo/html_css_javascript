@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ 범위(R=Math.random())
+ 	- 실수 --> 0.0<= R <1.0
+ 	- 0부터 9까지의 정수를 임의로 발생하게 하자.
+ 		0.0*10 <= R*10 < 1.0*10   ---> 	0.0 <= R*10 <=10.0
+ 		실수를 정수로 변환처리하는 함수 : parseInt()
+ 		0 <= parseInt(R*10) < 10  ---> 	0,1,2,3,4,5,6,7,8,9 까지의 임의 수가 발생 (총 10가지)
+ 	
+ 	- 1부터 6까지의 주사위 숫자가 임의로 발생
+ 		R*n : n은 총 가지수를 처리함. 한계치 범위
+ 		0 <= parseInt(R*6) < 6    ---> 0,1,2,3,5
+ 		1 <= parseInt(R*6)+1 < 7  ---> 1,2,3,4,5,6
+*/
+	var ran = Math.random();		// 매 실행시 다른 값 발생.(실수 - 소수점 포함)
+	alert(ran);
+	alert(ran*10);
+	alert( parseInt(ran*10) );		// 0~9까지 임의의 수가 발생(정수로만)
+	alert(Math.floor(ran*10));
+	alert(Math.round(ran*10));
+	
+
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

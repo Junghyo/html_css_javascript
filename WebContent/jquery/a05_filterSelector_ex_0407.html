@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	});
+	// 1단계	
+	function delete1(){
+		$("input:focus").val("");
+	};
+
+	function sum(){
+		var num1 = Number($("input[name=num01]").val());
+		var num2 = Number($("input[name=num02]").val());
+		sum1=(num1+num2);
+		var answer1 = Number($("input[name=answer]").val());
+		if(event.keyCode==13){
+			if(answer1==sum1){
+				alert("정답");
+			}else{
+				alert("오답");
+			}
+		}
+	}
+// 2단계
+	$(document).ready(function(){
+		idx = Math.floor(Math.random()*5);
+		var symbol = ["+", "-", "*", "/", "%"];
+		$("span").html(symbol[idx]);
+	});
+	function sum2(){
+		var num1 = Number($("input[name=num1]").val());
+		var num2 = Number($("input[name=num2]").val());
+		var answer = Number($("input[name=answer1]").val());
+		var result = [num1+num2, num1-num2, num1*num2, num1/num2, num1%num2];
+		if(event.keyCode==13){
+			if(answer==Number(result[idx])){
+				alert("정답");
+			}else{
+				alert("오답");
+				alert("정답은 "+Number(result[idx]));
+			}
+		}	
+	};
+	
+// 3단계
+	count=0;
+	setInterval(function(){
+		$("h2").html(count+"초가 지났습니다!<br>60초가 지나면 시험시간 종료!");
+		count++;
+	},1000);
+/*
+ 확인예제.
+ 1단계 
+ [@@]+[@@]=[입력하세요]
+ 입력하세요에 클릭하는 순간 입력이 가능하게 문자삭제 처리. 해당 정답이 맞을 때 - 정답. 트렸을 때 오답
+ 
+ 2단계
+ Math.random()을 활용하여 ##(사칙연산임의)
+ [@@]##[@@]=[입력하세요]
+ 위 내용 selector를 이용 선택 처리하게
+ 
+ 3단계(숙제)
+ 문제 10문제를 시간 count down 처리해서
+ 시간이 지나면 맞은 문제 갯수를 10점 환산에 점수
+*/
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h1>1단계</h1>
+	<input type="text" name="num01" value="첫번째 숫자" onclick="delete1()"> + 
+	<input type="text" name="num02" value="두번째 숫자" onclick="delete1()"> = 
+	<input type="text" name="answer" value="입력하세요"  onclick="delete1()" onkeydown="sum()">
+	<h1>2단계</h1>
+	<input type="text" name="num1" value="첫번째 숫자" onclick="delete1()">
+	<span></span>
+	<input type="text" name="num2" value="두번째 숫자" onclick="delete1()"> =
+	<input type="text" name="answer1" value="입력하세요"  onclick="delete1()" onkeydown="sum2()">
+	<h1>3단계</h1>
+	<h2></h2>
+		
+</body>
+</html>

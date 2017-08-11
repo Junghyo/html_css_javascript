@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var topPos=10;
+	var leftPos=10;
+	function goUp(){
+		var bgrRed = document.getElementsByClassName("red")[0];
+	    alert(bgrRed.innerHTML+"색타일을 위로 이동");
+		topPos-=50;
+		bgrRed.style.top=topPos+"px";
+	}
+	function goDown(){
+		var bgrRed = document.getElementsByClassName("red")[0];
+		alert(bgrRed.innerHTML+"색타일을 아래로 이동")
+		topPos+=50;
+		bgrRed.style.top=topPos+"px";
+	}
+	function goLeft(){
+		var bgrRed = document.getElementsByClassName("red")[0];
+		alert(bgrRed.innerHTML+"색타일을 왼쪽으로 이동")
+		leftPos-=50;
+		bgrRed.style.left=leftPos+"px";
+	}
+	function goRight(){
+		var bgrRed = document.getElementsByClassName("red")[0];
+		alert(bgrRed.innerHTML+"색타일을 오른쪽으로 이동")
+		leftPos+=50;
+		bgrRed.style.left=leftPos+"px";
+	}
+</script>
+<style type="text/css">
+	div{height:100px; width:100px; position:absolute;}
+	.red{background:red; top:10px; left:10px; z-index:50;}
+	.green{background:green; top:20px; left:20px; z-index:40;}
+	.blue{background:blue; top:30px; left:30px; z-index:30;}
+	th{width:33%; height:33%; background:yellow;}
+</style>
+
+</head>
+<body>
+	<div class="red">빨강</div>
+	<div class="green">초록</div>
+	<div class="blue">파랑</div>
+	<table align="center" border width=300; height=300;>
+		<tr><th></th><th onclick="goUp()">위로</th><th></th></tr>
+		<tr><th onclick="goLeft()">왼쪽으로</th><th></th><th onclick="goRight()">오른쪽으로</th></tr>
+		<tr><th></th><th onclick="goDown()">아래로</th><th></th></tr>
+		
+	</table>
+</body>
+</html>

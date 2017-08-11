@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 테이블 생성
+		var div="";
+		div+="<table border=1>";
+		for(var i=0; i<3; i++){
+			div+="<tr>";
+			for(var j=0; j<3; j++){
+				div+="<th></th>";
+			}
+			div+="</tr>";
+		}
+		div+="</table>";
+		$("body").html(div);
+		// 테이블 css
+		$("table").css({width:"300px", height:"300px", borderCollapse:"collapse"});
+		
+		// th 배열 정리
+		var ths=document.querySelectorAll("th");
+		
+		// th에 숫자 삽입
+		$.each(ths,function(index){
+			$("th").eq(index).html(index+1);
+		})
+		// var ranIdx=parseInt(Math.random()*$("td").size());
+		var ranIdx=parseInt(Math.random()*9)+1;
+		// th 클릭함수
+		$("th").on("click",function(){
+			$("th").css("background", "");
+			$(this).css("background","green");
+			if(ranIdx==$(this).html()){
+				alert("떡 발견");
+			}else{
+				alert("틀렸어 ");
+			}
+		})
+	});
+
+</script>
+<style type="text/css">
+	
+</style>
+
+</head>
+<body>
+</body>
+</html>

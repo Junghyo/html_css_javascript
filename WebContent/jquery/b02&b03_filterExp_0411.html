@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.each(list, function(index){
+			$("tr").eq(index).html("<th>"+list[index]+"</th>");
+		});
+		$("table").css({"border-collapse":"collapse", margin:"auto", width:"300px", height:"600px"});
+		$("th").css({border:"1px dotted black", height:"100px"});
+		$("tr").filter(function(index){
+			return index%2==0;
+		}).css({background:"skyblue", color:"red"});
+		$("tr").filter(function(index){
+			return index%2==1;
+		}).css({background:"grey", color:"black"});
+		document.querySelector("tr").style.background="green";
+		document.querySelector("tr").style.color="white";
+		$("tr>th").filter(function(index){
+			return index==3;
+		}).append("-판매완료");
+	});
+	document.write("<table>");
+	for(var i=0; i<6; i++){
+		document.write("<tr>");
+		for(var j=0; j<1; j++){
+			document.write("<th></th>");
+		}
+		document.write("</tr>");
+	};
+	document.write("</table>");
+	var list = ["판매품목", "오렌지", "사과", "바나나", "딸기", "수박"];
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/*
+ ● 사용자 정의 함수 예제
+ function 함수이름(입력값1, 입력값2){ }
+ function plus(num01, num02){    :   입력값 정의
+ 처리할 프로세스 정의
+ var sum = num01+num02;
+ return sum;  :  결과물을return           
+ }
+ 호출 : 함수명(입력할 데이터값1, 입력할 데이터값2);
+ plus(25,21); -> 46이라는 결과값이 함수를 통해서 처리
+*/ 
+
+// 1. 함수 정의
+	function plus(num01, num02){		// 입력값 num01, num02로 지정
+	 	var sum = num01 + num02;		// 프로세스 처리(합산 처리)
+	 	return sum;						// 함수를 호출했을 때, 결과값 return
+ }
+
+// 2. 함수 호출
+	plus(100, 250);
+/*  
+  정의된 함수의 순서에 맞게 값이 입력됨
+ num01에는 100, num02에는 250이 입력. sum에는 100과 250이 합산된 내용이 저장. 
+ return에 sum이 있음으로 이 함수값은 350이 된다. plus(100, 250);는 현재 메모리에 350이라는 숫자가 있는 상황.
+ 원하는 출력형식을 지정해서 출력 처리하면 된다.
+ 1). 변수로 할당 	2) alert나 console.log라는 출력 함수를 통해서 처리해야 화면에서 볼 수 있다. 
+*/
+
+// 3. 함수의 결과값을 메모리에 할당
+	var result = plus(100, 250);
+ 	alert(result);
+ 	console.log(result);
+ 	var result = plus(10,1000);
+ 	document.write(result);
+
+/* 확인예제. */ 
+// 1). minus 함수를 정의하고, 이 함수에 입력값 num01, num02, num03을 처리했을 때 결과값을 console.log, alert에서 처리하게 하세요. 
+	function minus(num01, num02, num03){
+	 	var sum01=num01-num02-num03;
+	 	var strRst=num01+"-"+num02+"-"+num03+"="+sum01;
+	 	return strRst;
+ };
+ 	var result01=minus(100,10,20);
+ 	console.log(result01);
+ 	alert(result01);
+// 2). multi 함수를 정의하고, 입력값은 num01, num02, 출력값은 '@@*@@=@@@' 로 나오도록 하세요.
+ 	function multi(num03, num04){
+ 		var sum02=num03+"*"+num04+"="+num03*num04;
+ 		return sum02;
+ };
+ 	var result02=multi(22,15);
+ 	console.log(result02);
+// 3). div 함수 정의 후 num05, num06 출력값은 '@@/@@=@@'로...
+	function div(num05, num06){
+		var sum03=num05/num06;
+		var strRst02=num05+" / "+num06+" = "+sum03;
+		return strRst02;		// 식자체를 문자열로 retrun처리.
+};
+	var result03=div(22222,2);
+	alert(result03);
+	document.write("\n"+result03);
+	
+/* 함수 정의 2번째
+ 함수의 변수를 지정
+ 변수 : var 함수명;
+ 함수를 할당 : 함수명 = function(데이터1){처리할 프로세스};
+ 함수호출 : 함수명(데이터1값);
+ var show01 = function(showStr){			// 함수변수 = 함수내용 할당;
+	 alert("입력받은 출력내용"+showStr);			// show01("안녕하세요!!!");
+};
+		
+*/
+	var show01 = function(showStr){
+		alert("입력받은 출력내용 : "+showStr);
+};
+	show01="안녕하세요";
+	
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

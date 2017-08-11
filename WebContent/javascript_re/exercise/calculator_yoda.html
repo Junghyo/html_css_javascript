@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function calKey(){
+		var keycode=event.keyCode;
+		switch(keycode){
+		case 27:
+			document.getElementById("c").onclick(); break;
+		case 111:
+		case 191:
+			document.getElementById("/").onclick(); break;
+		case 106:
+			document.getElementById("*").onclick(); break;
+		case 8:
+			document.getElementById("back").onclick(); break;
+		case 55:
+		case 103:
+			document.getElementById("7").onclick(); break;
+		case 56:
+		case 104:
+			document.getElementById("8").onclick(); break;
+		case 57:
+		case 105:
+			document.getElementById("9").onclick(); break;
+		case 189:
+		case 109:
+			document.getElementById("-").onclick(); break;
+		case 52:
+		case 100:
+			document.getElementById("4").onclick(); break;
+		case 53:
+		case 101:
+			document.getElementById("5").onclick(); break;
+		case 54:
+		case 102:
+			document.getElementById("6").onclick(); break;
+		case 187:
+		case 107:
+			document.getElementById("+").onclick(); break;
+		case 49:
+		case 97:
+			document.getElementById("1").onclick(); break;
+		case 50:
+		case 98:
+			document.getElementById("2").onclick(); break;
+		case 51:
+		case 99:
+			document.getElementById("3").onclick(); break;
+		case 48:
+		case 96:
+			document.getElementById("0").onclick(); break;
+		case 190:
+		case 110:
+			document.getElementById(".").onclick(); break;
+		case 13:
+			document.getElementById("=").onclick(); break;				
+		}
+	}
+	function cal(num) {
+		document.getElementById("display").innerHTML+=num;
+	}
+
+
+	function cal(num){
+		document.getElementById("display").innerHTML+=num;
+	}
+	function result(){
+		try{
+			document.getElementById("display").innerHTML=eval(document.getElementById("display").innerHTML);
+		}catch(e){
+			alert("잘못된 연산식입니다. 다시 입력하세요");
+			document.getElementById("display").innerHTML="";
+		}if(document.getElementById("display").innerHTML=="undefined"){
+			alert("수식을 먼저 입력한 후 결과버튼(=)을 클릭하세요.");
+			document.getElementById("display").innerHTML="";
+		}
+	}	
+	function clearCal(){
+		document.getElementById("display").innerHTML="";
+	}
+	function backSpace(){
+		document.getElementById("display").innerHTML=document.getElementById("display").innerHTML.substring(0,document.getElementById("display").innerHTML.length-1);
+	}
+</script>
+<style type="text/css">
+	table{outline:lime; border:3px solid black; background:grey; padding:10px;}
+	tr th{border:1px solid blue; width:100px;
+		  height:100px; border-radius:10px;
+		  font-weight:bold; font-size:40px; color:white;}
+	.symbol{background:#000033;}
+	.final{background:orange;}
+	.num{background:#6666ff;}
+	#display{font-size:20px; color:black; text-align:right; background:white;}
+	.symbol:active{opacity:0.5;}
+	.num:active{opacity:0.5;}
+	.final:active{opacity:0.5;}
+	
+
+</style>
+
+</head>
+<body onkeydown="javascript:calKey()">
+	<table>
+		<tr>
+			<th id="display" colspan=4></th>
+		</tr>
+		<tr>
+			<th class="symbol" id="c" onclick="javascript:clearCal()">C</th>
+			<th class="symbol" id="/" onclick="javascript:cal('/')">÷</th>
+			<th class="symbol" id="*" onclick="javascript:cal('*')">×</th>
+			<th class="symbol" id="back" onclick="javascript:backSpace()">←</th>
+		</tr>
+		<tr>
+			<th class="num" id="7" onclick="javascript:cal('7')">7</th>
+			<th class="num"id="8" onclick="javascript:cal('8')">8</th>
+			<th class="num" id="9" onclick="javascript:cal('9')">9</th>
+			<th class="symbol" id="-" onclick="javascript:cal('-')">-</th>
+		</tr>
+		<tr>
+			<th class="num" id="4" onclick="javascript:cal('4')">4</th>
+			<th class="num" id="5" onclick="javascript:cal('5')">5</th>
+			<th class="num" id="6" onclick="javascript:cal('6')">6</th>
+			<th class="symbol" id="+" onclick="javascript:cal('+')">+</th>
+		</tr>
+		<tr>
+			<th class="num" id="1" onclick="javascript:cal('1')">1</th>
+			<th class="num" id="2" onclick="javascript:cal('2')">2</th>
+			<th class="num" id="3" onclick="javascript:cal('3')">3</th>
+			<th class="symbol" id="mod" onclick="javascript:cal('%')">MOD</th>
+		</tr>
+		<tr>
+			<th class="num" id="0" onclick="javascript:cal('0')">0</th>
+			<th class="num" id="." onclick="javascript:cal('.')">.</th>
+			<th colspan=2 id="=" class="final"onclick="javascript:result()">=</th>
+		</tr>
+	</table>
+</body>
+</html>

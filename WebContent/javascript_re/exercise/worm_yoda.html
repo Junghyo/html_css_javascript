@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});
+    var set_row=10; 
+    var set_col=10; 
+
+ 	
+     
+ 
+	// 맵 만들기
+	function make_map(){
+		div="";
+		div=("<table>");
+		for(r=0; r<set_row; r++){
+				div+=("<tr>");
+			for(l=0; l<set_col; l++){
+				div+=("<td id='block_"+l+"_"+r+"' class='block'></td>");
+			}
+			div+=("</tr>"); 
+		}div+=("</table>");
+		return div;
+	}
+
+    
+	// 게임시작
+	function game_start(){
+		set_row=document.game.row.value;
+		set_col=document.game.col.value;
+		document.getElementById("display").innerHTML=make_map();
+	}
+
+
+</script>
+<style type="text/css">
+	table{border:1px solid black; margin:auto; border-collapse:collapse;}
+	.block {width:25px;height:25px; border-color:#999999; border:1px solid black;}
+	input[type=number]{width:50px;}
+</style>
+
+</head>
+<body>
+	<form name="game" method="post">
+		<table>
+			<tr>
+				<th>
+					가로<input type="number" name="row" value=10>
+					세로<input type="number" name="col" value=10>
+				        장애물<input name="xblock" value=5 size=3>
+					<input type="button" id="start" value="게임시작" onclick="javascript:game_start()">
+				</th>
+			</tr>
+			<tr>
+				<th>	
+					<div id="display">
+						<script>
+							// 초기 맵 세팅
+							document.write("<table>");
+							for(r=0; r<set_row; r++){
+								document.write("<tr>");
+								for(l=0; l<set_col; l++){
+									document.write("<td id='block_"+l+"_"+r+"' class='block'></td>");
+								}
+								document.write("</tr>");
+							}
+							document.write("</table>");
+						</script>	
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<th>
+				점수<input name="score" value=0 size=3>
+				스피드<input name="speed" value=0 size=3>
+				</th>
+			</tr>		
+		</table>
+	</form>
+</body>
+</html>

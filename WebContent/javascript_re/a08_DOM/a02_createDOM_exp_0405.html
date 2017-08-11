@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ 확인예제.
+ 1) DOM 객체로 생성처리
+ h1에 "반갑습니다!! 오늘도 마무리를 위해!";
+ 
+ 2) DOM으로 table <-tr <-td
+ 	dom		구조
+ 	마스터!	^^
+*/
+	$(document).ready(function(){
+		var h1Obj = document.createElement("h1");
+		var title01 = document.createTextNode("DOM : 반갑습니다! 오늘도 마무리를 위해!");
+		h1Obj.appendChild(title01);
+		document.body.appendChild(h1Obj);
+		var tableObj = document.createElement("table");
+		var trObj01 = document.createElement("tr");
+		var trObj02 = document.createElement("tr");
+		var tdObj0101 = document.createElement("td");
+		var tdObj0102 = document.createElement("td");
+		var tdObj0201 = document.createElement("td");
+		var tdObj0202 = document.createElement("td");
+		var text0101 = document.createTextNode("DOM");
+		var text0102 = document.createTextNode("구조");
+		var text0201 = document.createTextNode("마스터");
+		var text0202 = document.createTextNode("^^");
+		tdObj0101.appendChild(text0101);
+		tdObj0102.appendChild(text0102);
+		tdObj0201.appendChild(text0201);
+		tdObj0202.appendChild(text0202);
+		trObj01.appendChild(tdObj0101);
+		trObj01.appendChild(tdObj0102);
+		trObj02.appendChild(tdObj0201);
+		trObj02.appendChild(tdObj0202);
+		tableObj.appendChild(trObj01);
+		tableObj.appendChild(trObj02);
+		document.body.appendChild(tableObj);
+		
+	});
+
+</script>
+<style type="text/css">
+	table{border:1px solid black; border-collapse:collapse;}
+	td{border:1px solid black;}
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

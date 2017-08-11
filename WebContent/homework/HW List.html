@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전체 숙제 list.</title>
+
+<script>
+	function getInvolve(){
+		var userIdInput = document.newInform.userId.value;
+		var userPass2Input = document.newInform.userPass2.value;
+		var userNameInput = document.newInform.userName.value;
+		var otherNInput = document.newInform.otherN.value;
+		var emailInput = document.newInform.email.value;
+		alert("입력단어: " + userIdInput);
+	}
+	function comp(){
+		var pass01 = document.newInform.userPass1.value;
+		var pass02 = document.newInform.userPass2.value;
+		if( pass01 == pass02 ){
+			alert("일치합니다.");
+		}
+		else{
+			alert("불일치합니다");
+		}
+	}
+	
+	function calc(){
+		var mName = document.theater.movieName.value;
+		var mPrice = parseInt(document.theater.moviePrice.value);
+		var mWatcher = parseInt(document.theater.watcherN.value);
+		var mPayment = parseInt(document.theater.payment.value);
+		document.theater.receipt.value = ("영화제목: "+ mName + "\n 가격: "+mPrice + "\n 인원: "+ mWatcher + 
+				"\n 내시는돈: "+ mPayment + "\n총 결제값: " +mPrice +"*"+mWatcher + "=" +   
+				(mPrice *mWatcher) + "\n거스름돈: "+ (mPayment - (mPrice*mWatcher)));
+	}
+	
+	
+	
+</script>
+
+
+<style>
+	#table01{font-color : black; text-size: 13px; }
+	#title02{ background-color: yellow; text-color: blue; font-weight: bold; text-align: center; }
+	td.obj01{ background-color: pink; }
+	#numb{ background-color : yellow; text-align: right; }
+	
+	#rowWd{ width : 200pt; }
+	#colHt{ height : 100pt; }
+	#fontReg {font-size: 15pt;}
+	#table03{ padding: 15pt; }
+	
+	input[value = "60"]{ background-color : red; }
+	input[value = "70"]{ background-color : blue; }
+	input[value = "80"]{ background-color : yellow; }
+	input[value = "90"]{ background-color : green; }
+	
+	
+</style>
+
+</head>
+<body>
+
+<!--  앞으로 프로그래밍 숙제 모음... -->
+	<a href = "#goHW1" > 0307HW </a><br>
+	<a href = "#goHW2" > 0308HW </a><br>
+
+
+
+<h1 id = "goHW1"> 0307HW.</h1>
+<!-- a07 앵커.
+목차선언.
+해당 목차 클릭시, 해당내용에 서술된곳으로 이동.
+
+h1> 응용sw개발자 양성과정 
+h2>배울과목
+h3>
+1.html5
+2.css3
+3.jscript.
+4.jquery
+5.ajax
+6.Java
+7.jsp
+8.spring
+9. R
+10.파이선
+11.하둡
+
+...
+1.위키 출처링크.
+def) html이란..
+브라우저단 프로그램..@@@
+현재는 html5로 확장된 기능을 처리한다.
+ -->
+
+	<p align ="center"></p>
+		<h1 align ="center"><b>응용sw개발자 양성과정</b></h1>
+		<h2><i>배울과목</i></h2>
+		<h3>
+			<a href = "#goHtml5"> 1. Html5</a> <br>
+			<a href = "#goCss3"> 2. css3</a> <br>
+			<a href = "#goJscript"> 3. JavaScript </a><br>
+			<a href = "#goJquery"> 4.Jquery</a><br>
+			<a href = "#goAjax"> 5.AJAX</a><br>
+			<a href = "#goJava"> 6.JAVA</a><br>
+			<a href = "#goJsp"> 7.JSP</a><br>
+			<a href = "#goSpring"> 8.Spring</a><br>
+			<a href = "#goR"> 9.R</a><br>
+			<a href = "#goPython"> 10.Python </a><br>
+			<a href = "#goHadoop">11.Hadoop</a><br>
+		</h3>
+		
+		
+			<h3 id ="goHtml5">1.Html5</h3> 
+				<a href = "https://ko.wikipedia.org/wiki/HTML5">html5출처: 위키</a><br>
+			<h3 id ="goCss3">2. css3</h3> 
+				<a href = "https://ko.wikipedia.org/wiki/%EC%A2%85%EC%86%8D%ED%98%95_%EC%8B%9C%ED%8A%B8#CSS3">css3출처: 위키</a><br>			
+			<h3 id ="goJscript">3. JavaScript </h3> 
+				<a href = "https://en.wikipedia.org/wiki/JavaScript">출처: 위키 Java Script</a><br>		
+			<h3 id ="goJquery">4.Jquery</h3> 
+				<a href = "https://en.wikipedia.org/wiki/JQuery">출처: 위키 Jquery</a><br>	
+			<h3 id ="goAjax">5.AJAX</h3> 
+				<a href = "https://en.wikipedia.org/wiki/Ajax_(programming)">출처: 위키 AJAX</a><br>
+			<h3 id ="goJava">6.JAVA</h3> 
+				<a href = "https://en.wikipedia.org/wiki/Java_(programming_language)">출처: 위키 JAVA</a><br>
+			<h3 id ="goJsp">7.JSP</h3> 
+				<a href = "https://en.wikipedia.org/wiki/JavaServer_Pages">출처: 위키 JSP</a><br>
+			<h3 id ="goSpring">8.Spring</h3> 
+				<a href = "https://en.wikipedia.org/wiki/Spring_Framework">출처: 위키 Spring</a><br>
+			<h3 id ="goR">9.R</h3>
+				<a href = "https://en.wikipedia.org/wiki/R_(programming_language)">출처: 위키 R</a><br>
+			<h3 id ="goPython">10.Python</h3> 
+				<a href = "https://en.wikipedia.org/wiki/Python_(programming_language)">출처: 위키 Python</a><br>
+			<h3 id ="goHadoop">11.Hadoop</h3> 
+				<a href = "https://en.wikipedia.org/wiki/Apache_Hadoop">출처: 위키 Hadoop</a><br>
+
+<!-- a09 리스트 숙제 -->
+ <h1> 요즘 관심분야</h1>
+ <ol>
+ 	<li>학습
+ 		<ul type ="square">
+	 		<li>프로그램
+	 		<li>영어
+	 		<li>화면설계
+ 		</ul>
+ 	</li>
+ 	<li> 휴식
+ 		<ul type ="circle">
+ 			<li>영어
+	 		<li>잠
+	 		<li>음악
+ 		</ul>
+ 	</li>
+ 	<li> 취미
+ 		<ul></ul>
+ 	</li>
+ 
+ </ol>
+ 
+ <br>
+ 
+<!-- a10 테이블과제1.
+	2017년 KBO리그구단
+	
+	구단명 연고지역 작년(2016년)성적
+	KIA	광주	@@승@@패
+	롯데	부산	@@승@@패
+
+ -->
+ <h1 align = "center">숙제: 테이블// 2017년 KBO리그구단</h1>
+ <table align= "center" border = "1">
+ 	<tr bgColor = "green">
+ 		<th><b>구단명</th><th><b>연고지역</th><th><b>작년(16년)성적</th>
+ 	</tr>
+ 	<tr>
+ 		<td bgColor = "blue" = >KIA</td><td>광주</td><td>12승 3패 4무</td>
+ 	</tr>
+ 	<tr>
+ 		<td bgColor = "red">롯데</td><td>부산</td><td>1승 12패 2무</td>
+ 	</tr>
+ 	 
+ </table>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ 
+ <!-- 테이블 병합과제1. -->
+  <h1 align ="center"><b>테이블 span병합 과제1</b></h1>
+ <table align = "center" border>
+		<tr>
+ 			<td>과목</td><td colspan = "2">내용</td><td>비고</td>
+ 		</tr>
+		<tr>
+ 			<td rowspan ="2">JAVA</td><td colspan = "2">기본문법</td><td rowspan = "4"></td>
+ 		</tr>
+		<tr>
+ 			<td colspan = "2">object</td>
+ 		</tr>
+		<tr>
+ 			<td rowspan ="2">JSP</td><td colspan = "2">session</td>
+ 		</tr>
+		<tr>
+ 			<td colspan = "2">bear</td>
+ 		</tr> 		
+ </table> <br>
+ 
+ 
+ <!-- 테이블 병합과제2. 브루마블. -->
+<h1 align = "center">브루마블 테이블만들기</h1>
+<table align = "center" border>
+	<tr>
+		<td>a</td><td>b</td><td>c</td><td>d</td><td>e</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td colspan ="3" rowspan ="3"> <img src = "qqq.jpg">
+		</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td>
+	</tr>
+	<tr>
+		<td>5</td><td>6</td>
+	</tr>
+	<tr>
+		<td>q</td><td>w</td><td>e</td><td>r</td><td>t</td>
+	</tr>
+</table><br>
+ 
+
+
+<h1 id = "goHW2"> 0308HW </h1>
+
+<!-- 
+		a15 과제- 회원가입 form 구축. 
+		쇼핑몰이나, 게임사이트 들에서 회원가입란을 확인하고,
+		지금배운 form객체 하위 내용을 table과 함께 정렬을 효과적으로 활용해보자.
+			
+
+ -->
+
+
+<table align  = "center" border = "3">
+	<form name ="newInform" >
+	<tr width = "400">
+		 <td>아이디입력: </td>
+		 <td colspan = "2"><input type = "text" name = "userId" /> </td>
+	</tr>
+	<tr>
+		<td>패스워드:</td>
+		<td colspan = "2"> <input type = "password" name = "userPass1" /></td>
+	</tr >
+	<tr>
+		 <td>패스워드 재입력: </td>
+		 <td><input type = "password" name = "userPass2" /></td>
+		 <td><input type = "button"  value = "compare" onclick = "javascript: comp();"/></td>
+	</tr>
+	<tr>
+		<td>성함: </td>
+		<td colspan = "2"><input type = "text" name = "userName" /></td>
+	</tr>
+	<tr>
+		<td> ph: <select name = "locNum" />
+			<option value = "locN01"> 010 </option>
+			<option value = "locN02"> 011 </option>
+			<option value = "locN03"> 012 </option>
+			<option value = "locN04"> 016 </option>
+			<option value = "locN05"> 019 </option></td>
+		<td  colspan = "2"><input type = "number" name = "otherN" /></td>
+	</tr>
+	<tr width = "400" >
+		<td>이메일: </td>
+		<td  colspan = "2"><input type= "text" name = "email" /> </td>
+	</tr>
+	<br>
+</form>
+</table>
+<br><input type = "button" name = "done" value= "완료" onclick = "javascript: getInvolve();"/> 
+<br><input type = "reset" name = "rewrite" value= "다시작성하기" /> 
+<!-- 왜 compare누르면 앞에것들이 사라지는지 생각해보자. 
+엔터는 서밋으로 간주한다. -->
+
+
+<h2 align = "center"> a18_formCalc </h2>
+<!--  과제
+	영화관에 가서..
+	제목: []
+	관람료: []
+	인원: []
+			[계산]
+	영수증 ---textarea <<에 주입
+		제목:@@@
+		계산: @@@ * @@@ = @@@ 
+	
+	
+a18 formCalc에서 재확인. 거긴 되는데 여기가 안되는건 뭐지.
+ -->
+<center>
+<h1 align = "center"></h1>
+ <p>
+ <form name = "theater">
+
+ 	제목:	<input type = "text" name= "movieName" /><br>
+ 	관람료:<input type = "number" name = "moviePrice" /><br>
+ 	인원:	<input type = "number" name = "watcherN" /><br>
+ 	계산:	<input type = "number" name = "payment" /><br>
+ 	<input type = "button"  name = "done"  value = "완료. 영수증 출력하기"  onclick ="javascript: calc();" /><br>
+ 	<textarea name = "receipt" ></textarea>
+ 	
+ </form>	
+ </p>
+</center>
+
+
+
+
+
+<!--  과제 a01_css적용하셔서..
+	어서오세요!
+	즐거운 쇼핑되시길..!
+
+판매물품현황
+ch				물건명	가격		갯수
+[checkbox]	[사과]		[3000]		[1]
+[]				[바나나]	[2000]		[2]
+[]				[오렌지]	[5000]		[3]
+[]				[딸기]		[2000]		[4]
+
+[구매]
+-- 화면처리 사항 (기본 글자색상:검정;)
+1. title 부분은 배경색상:노랑; text색상:파랑;
+2. 물건명에 해당하는 배경색상:pink;
+3.	갯수부분 입력하는 배경색상:노랑; 글자정렬(text-align):오른쪽;
+
+ -->
+<center>
+<h2> 과제a01_css</h2>
+	<h3>어서오세요! <br> 즐거운 쇼핑되시길!! <br></h3>
+
+	<caption id = "title02">판매물품 현황</caption>
+	<table id = "table01" border ="3" width = 200 height = 200 >
+		<tr id = "title02">
+			<td >Ch</td><td >물건명</td><td>가격</td><td>갯수</td>
+		</tr>
+		<tr id ="obj01">
+			<td>[<input type = "checkbox" />]</td><td class ="obj01">사과</td><td>3000</td><td id = "numb">1</td>
+		</tr>
+		<tr >
+			<td>[<input type = "checkbox" />]</td><td class ="obj01">바나나</td><td>2000</td><td id = "numb">5</td>
+		</tr>
+		<tr>
+			<td>[<input type = "checkbox" />]</td><td class ="obj01">오렌지</td><td>5000</td><td id = "numb">4</td>
+		</tr>
+		<tr>
+			<td>[<input type = "checkbox" />]</td><td class ="obj01">딸기</td><td>7000</td><td id = "numb">2</td>
+		</tr>
+	</table>
+	<br>
+</center>
+
+
+<!-- 
+과제 
+아래와같이 점수를 만들고 해당 속성값을 체크를 해서 나타내세요.
+60 - 배경: 빨강
+70 - 배경: 파랑
+80 - 노랑
+90 - 초록.
+
+	과목별 학점
+	과목명 점수
+	[국어]		[70]
+	[영어]		[90]
+	[수학]		[60]
+*/
+-->
+
+
+
+<table align = "center" border = "3">
+	<tr>
+		<td width = 100 >과목별</td >
+		<td width = 100 >학점</td>	
+	</tr>
+	<tr>
+		<td>과목명</td>
+		<td>점수</td>	
+	</tr>
+	<tr>
+		<td>[국어]</td>
+		<td><input type = "number" value ="90" /></td>	
+	</tr>
+	<tr>
+		<td>[영어]</td>
+		<td><input type = "number" value ="70"/></td>	
+	</tr>
+	<tr>
+		<td>[수학]</td>
+		<td><input type = "number"  value ="60" /></td>	
+	</tr>
+
+</form>
+</table>
+
+
+
+</body>
+</html>
+
+
+

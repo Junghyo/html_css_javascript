@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ # 이벤트 연결 제거
+ $(객체).off() : 현재 연결된 이벤트를 제거처리
+ $("h1").click(function(){
+	 alert("좋아요 클릭합니다");
+	 $(this).append("★");
+	 $(this).off();		-- 이벤트 제거
+ })
+
+*/
+	$(document).ready(function(){
+		$("h2").click(function(){
+			alert("좋아요 클릭!");
+			$(this).append("★");
+//			이벤트 제거			
+			$(this).off();
+		})
+//		한번만 이벤트 처리 : one
+//		$(객체).one("이벤트명", 처리할 함수);
+		$("h1").one("click",function(){
+			$(this).html("凸"+$(this).html()+"凸");
+		})
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h2>너무졸려1 h2</h2>
+	<h2>너무졸려2 h2</h2>
+	<h2>너무졸려3 h2</h2>
+	<h2>너무졸려4 h2</h2>
+	<h2>너무졸려5 h2</h2>
+	<h2>너무졸려6 h2</h2>
+	<h1>너무졸려1 h1</h1>
+	<h1>너무졸려2 h1</h1>
+	<h1>너무졸려3 h1</h1>
+	<h1>너무졸려4 h1</h1>
+</body>
+</html>

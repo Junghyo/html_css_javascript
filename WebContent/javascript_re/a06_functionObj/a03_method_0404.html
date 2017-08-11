@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ 객체는 고정된 변수와 이를 활용하는 메서드로 크게 나누어진다.
+ 메서드 기능 : 함수가 각 개체에 소속되어 있는 것.
+ 	- 입력값, 프로세스 처리(연산 조건), 공통 출력, return값
+ 
+ function Student(name){
+	 this.name=name;
+	 this.show=function(fname){			-- 함수 할당
+		console.log("이름"+this.name);
+		console.log("친구이름"+fname);
+		return XXXX;
+	 };	-- 메서드 정의
+ }
+ 호출 : var 객체참조 = newe 생성자();
+ ex) var stu01 = new Student("홍길동");
+ 	 stu01.show("이진영")		// stu01.show; (X)
+ */
+ 	function Friend(name){
+ 		 this.name=name;
+ 		 // 이 객체의 전역변수 name할당. 메서드가 되느냐 전역변수가 되느냐는 할당된 변수에 따라 바뀜
+ 		 this.introFriend = function(fname){
+ 		 // 입력할 데이터가 있으면 function(입력데이터 정의)
+ 		 // (1). 입력값을 넣을 수 있음.(fname)
+ 			 console.log("나의 이름은 "+this.name);
+ 			 console.log("내 친구를 소개합니다! 친구 이름은 "+fname);
+ 			 // (2). 공통출력, 프로세스 처리
+ 			 return "리턴도 된다.";
+ 			 // (3). return값 (정의하지 않아도 됨)
+ 		 };
+ 	 };
+// 객체 생성
+	var friend01 = new Friend("좌완에이스");
+	// 전역변수 this.name에 "에이스"라는 데이터 할당
+	friend01.introFriend("4번타자"); 
+	// 메서드로 정의된 입력값에 데이터를 전달. fname은 "4번타자"로 처리.
+	var retMsg=friend01.introFriend("4번타자");
+	// 현재 return되는 데이터를 정의하고 있기 때문에
+	console.log("return 되는 값 : "+retMsg);
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+</body>
+</html>

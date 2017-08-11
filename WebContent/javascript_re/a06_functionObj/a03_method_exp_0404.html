@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 확인예제.
+ 변수들 출력하기
+ 	- 함수객체 : ChildFriends
+ 	- 생성자 입력값 : 어린 시철 친구들 입력(3명 이상)
+ 	- 메서드 printAll 정의하고 console 창으로 추억의 친구들 @@@, @@@, @@@
+*/
+	function ChildFriends(name, gender){
+ 		this.name=name;
+ 		this.gender=gender;
+ 		this.show=function(){
+ 			console.log(this.name+"("+this.gender+")");
+ 		};
+ 	};
+ 	var friend01 = new ChildFriends("짱짱맨", "남자");
+ 	var friend02 = new ChildFriends("짱짱걸", "여자");
+ 	var friend03 = new ChildFriends("카타리나", "여자");
+ 	friend01.show();
+ 	friend02.show();
+ 	friend03.show();
+
+	function ChildFriends1(friend1,friend2,friend3){
+ 		this.friend1=friend1;
+ 		this.friend2=friend2;
+ 		this.friend3=friend3;
+ 		this.show02=function(){
+ 			console.log("추억의 친구들 : ");
+ 			console.log(this.friend1+", "+this.friend2+", "+this.friend3);
+ 		};
+ 	};
+ 	var friend = new ChildFriends1("짱짱맨","카타리나","짱짱걸");
+
+ 	friend.show02();
+
+/*
+ 과제1. (homework 1)
+ 계산기 만들기
+ 함수객체 : Calculator
+ 입력값 : num01, num02, ....
+ 메서드 : plus(), minus(), multi(), div(); 를 통해서 각 기능별로 출력처리.
+ ex) @@@+@@@=@@@ 3+4=7  return값은 결과값(7)
+ ex) var result=cal01.plus();
+ */ 
+ 	function Calculator(num01, num02, num03){
+		this.num01=num01; 
+		this.num02=num02; 
+		this.num03=num03; 
+ };
+ 	function plz(){
+ 		var input=[document.getElementsByTagName("input")[0].value,
+ 			       document.getElementsByTagName("input")[1].value,		
+ 			       document.getElementsByTagName("input")[2].value];
+ 	 	function Calculator(num01, num02, num03){
+ 			this.num01=Number(num01); 
+ 			this.num02=Number(num02); 
+ 			this.num03=Number(num03);
+ 			var returnMsg="";
+ 			this.plus=function(){
+ 				var plusSum=this.num01+this.num02+this.num03;
+ 				console.log(this.num01+"+"+this.num02+"+"+this.num03+"="+plusSum);
+ 				returnMsg="결과값은 "+plusSum;
+ 				return returnMsg;
+ 			};
+ 			this.minus=function(){
+ 				var minusSum=this.num01-this.num02-this.num03;
+ 				console.log(this.num01+"-"+this.num02+"-"+this.num03+"="+minusSum);
+ 				returnMsg="결과값은 "+minusSum;
+ 				return returnMsg; 				
+ 			};
+ 			this.multi=function(){
+ 				var multiSum=this.num01*this.num02*this.num03;
+ 				console.log(this.num01+"×"+this.num02+"×"+this.num03+"="+multiSum);
+ 				returnMsg="결과값은 "+multiSum;
+ 				return returnMsg; 				
+ 			};
+ 			this.div=function(){
+ 				var divSum=this.num01/this.num02/this.num03;
+ 				console.log(this.num01+"÷"+this.num02+"÷"+this.num03+"="+divSum);
+ 				returnMsg="결과값은 "+divSum;
+ 				return returnMsg; 				
+ 			}; 			
+ 	 }; 
+ 	 	var cal = new Calculator(input[0],input[1],input[2]);
+ 	 	var plusResult=cal.plus();
+ 	 	console.info(plusResult);
+ 	 	var minusResult=cal.minus();
+ 	 	console.info(minusResult);
+ 	 	var multiResult=cal.multi();
+ 	 	console.info(multiResult);
+ 	 	var divResult=cal.div();
+ 	 	console.info(divResult);  	 	
+ 	};
+ 	
+
+</script>
+<style type="text/css">
+	input{width:150px; height:30px; font-size:20px;}
+	input[type=button]{height:36px;}
+</style>
+
+</head>
+<body>
+<input type="number">
+<input type="number">
+<input type="number">
+<input type="button" value="계산" onclick="javascript:plz()">
+</body>
+</html>

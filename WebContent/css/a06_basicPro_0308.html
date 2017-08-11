@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+ 기본 tag 속성에 대한 접근처리
+ tag명[tag의 기본 속성=속성값]{css속성1:css속성값1;}
+ 	ex) <input type="text" name="name01" value="himan"/>
+ 		<td align="center" bgColor="red">사과</td>
+ 	input[value=0]{background-color:yellow;}
+ 	td[align=center]{font-size:10pt;}	
+*/
+/* input중에 type 속성이 text인 것은 배경색상을 빨강색으로 처리*/
+	input[type=text]{background-color:red;}
+/* input중에  type속성이 password인 것은 배경색상을 파랑색으로 처리*/	
+	input[type=password]{background-color:green;}
+	
+/* 속성의 마지막값을 확인해서 데이터를 처리($) 
+   img tag의 속성값 src에서 마지막으로 들어가는 키워드가 png, jpg, gif일 때, 다른 border색상을 지정한다.
+   
+   border의 속성 한꺼번에 지정하기 ---{border: 굵기 형태 색상}
+*/   	
+	img[src$=png]{border: 3px solid red;}
+	img[src$=jpg]{border: 10px solid yellow;}
+	img[src$=gif]{border: 5px solid green;}
+
+/*속성의 시작값을 확인해서 데이터를 처리(^)*/ 
+	input[type^=pass]{border: 13px solid pink;}
+</style>
+</head>
+<body>
+		입력하세요!!! <input type="text"/><br>
+		password? <input type="password"/><br>
+		<img src="img01.jpg" width="200" height="200"/>
+		<img src="img02.gif" width="200" height="200"/>
+		<img src="img03.png" width="200" height="200"/>
+
+<!-- 
+ 과제(homework)
+ 아래와 같이 점수를 만들고 해당 속성값을 체크해서 나타내세요.
+ 60 - 빨강 색 배경색상
+ 70 - 파랑 색
+ 80 - 노랑
+ 90 - 초록	
+ 	과목별 학점
+ 	과목명 점수
+	[국어] [70]
+	[영어] [80]
+	[수학] [60]
+
+
+
+-->		
+</body>
+</html>

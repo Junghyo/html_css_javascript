@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+
+<style type="text/css">
+	canvas{width:300; height:300; border: 1px solid  #000000;};
+	/* css로는 px로만 조정되고 숫자로하려면 html단에서 조정*/
+</style>
+
+</head>
+<body>
+	<canvas id="yodaCanvas" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+	var canvas02=document.createElement("canvas");
+	// 캔버스 객체 생성
+	document.body.appendChild(canvas02);
+	// 바디에 상속
+	var ctx02=canvas02.getContext("2d");
+	ctx02.moveTo(0, 0);
+	// 시작점 설정 x, y 절대적
+	ctx02.lineTo(300,150);
+	// 끝점 설정 
+	ctx02.stroke();
+	// 선긋기
+	
+	var canvas01=document.getElementById("yodaCanvas");
+	var ctx01=canvas01.getContext("2d");
+	ctx01.beginPath();
+	// 경로를 시작. problem
+	ctx01.arc(150,150,70,0,2*Math.PI);
+	// 호 곡선을 만듬. x(가로), y(세로), r(반지름), startangle, endangle 
+	ctx01.stroke();
+</script>
+</html>
